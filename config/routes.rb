@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-  root to: "pets#index"
+  root to: "landing#index"
 
-  get "pets" => "pets#index", as: :pets
+  get "landing" => "landing#index", as: :landing
+  get "pets" => "pets#home", as: :pets
 
   # Defines the root path route ("/")
 end
