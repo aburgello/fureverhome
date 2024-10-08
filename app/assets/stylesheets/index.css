@@ -1,0 +1,50 @@
+body {
+  background-color: #f8f9fa;
+  color: #343a40;
+  margin-top: 100px;
+}
+
+nav {
+  margin-bottom: 2rem;
+}
+
+.navbar {
+  background-color: #f8f9fa;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-brand, .nav-link {
+  color: #343a40;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.container {
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #6f42c1;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
