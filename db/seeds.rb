@@ -1,27 +1,32 @@
 require 'faker'
 
 Pet.destroy_all
-puts "Seeding Dogs!"
+puts "Seeding Pets!"
 
-dog_service = DogApiService
-dogs = dog_service.call
+pet_service = DogApiService
 
-dogs.each do |dog|
-  random_name = Faker::Creature::Dog.name
+5.times do
+  pets = pet_service.call
 
-  Pet.create(
-    title: random_name,
-    description: dog[:description] || "A wonderful dog.",
-    user_id: 1,
-    breed: dog[:name],
-    age: rand(1..10),
-    status: 'available'
-  )
+  pets.each do |pet|
+    random_name = Faker::Creature::Dog.name
 
-  puts "Random Name: #{random_name}"
-  puts "Breed (from API): #{dog[:name]}"
-  puts "Description: #{dog[:description]}"
-  puts "-----------------------------"
+    Pet.create(
+      title: random_name,
+      description: pet[:description] || "A wonderful pet.",
+      user_id: 1,
+      breed: pet[:name],
+      age: rand(1..10),
+      status: 'available',
+      image_url: pet[:image_url]
+    )
+
+    puts "Random Name: #{random_name}"
+    puts "Breed (from API): #{pet[:name]}"
+    puts "Description: #{pet[:description]}"
+    puts "Image URL: #{pet[:image_url]}"
+    puts "-----------------------------"
+  end
 end
 
 puts "Seeding completed!"
