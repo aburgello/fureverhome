@@ -5,7 +5,7 @@ puts "Seeding Pets!"
 
 pet_service = DogApiService
 
-12.each do |i|
+12.times do |i|
   pets = pet_service.call
 
   pets.each do |pet|
