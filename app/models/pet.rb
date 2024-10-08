@@ -12,4 +12,4 @@ class Pet < ApplicationRecord
   # Optional: Add an enum for status
   enum status: { available: 'available', adopted: 'adopted' }
 end
-end
+

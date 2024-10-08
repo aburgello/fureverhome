@@ -1,12 +1,19 @@
+require 'net/http'
+require 'json'
+
 class DogApiService
-  include HTTParty
-  base_uri 'https://api.thedogapi.com/v1'
+  def self.call
+    url = URI("https://dogapi.dog/api/v2/breeds")
+    response = Net::HTTP.get(url)
+    parsed_response = JSON.parse(response)
 
-  def initialize
-    @api_key = 'live_mu73nFXmSeCCFjme0jRozwZjZdVm9dDx9m8rLeepgRVEZpVBFzNJagYq9SjM6erf'
-  end
+    breeds = parsed_response['data']
 
-  def fetch_dogs(limit = 20)
-    self.class.get('/breeds', headers: { "x-api-key" => @api_key }, query: { limit: })
+    breeds.map do |breed|
+      {
+        name: breed.dig('attributes', 'name'),
+        description: breed.dig('attributes', 'description'),
+      }
+    end
   end
 end

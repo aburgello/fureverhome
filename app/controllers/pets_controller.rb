@@ -1,6 +1,10 @@
 class PetsController < ApplicationController
-  before_action :authenticate_user!, only: [:home]
 
   def home
+    @pets = Pet.all
+  end
+
+  def index
+    @pets = Pet.all
   end
 end
