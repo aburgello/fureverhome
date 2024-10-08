@@ -1,3 +1,110 @@
-<h1>Hi</h1>
-<h1>Home</h1>
-<%= link_to 'Sign in', new_user_session_path %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FureverHome - Adopt a Pet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <%= stylesheet_link_tag 'home', media: 'all', 'data-turbo-track': 'reload' %>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">FureverHome</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pets">Adopt a Pet</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/edit">My Account</a>
+                </li>
+                <li class="nav-item">
+                    <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'nav-link' %>
+                </li>
+            <% else %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/sign_in">Sign In</a>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+</nav>
+
+    <div class="container text-center mt-5">
+        <h1>Welcome to FureverHome!</h1>
+        <h2>Your Next Best Friend Awaits</h2>
+        <p>
+            Explore our wide variety of pets available for adoption! Each pet is looking for a loving home, and we can't wait to help you find your perfect match.
+        </p>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Meet Our Pets</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Pet 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Buddy</h5>
+                        <p class="card-text">Age: 3 years | Breed: Golden Retriever</p>
+                        <p class="card-text">Buddy is a friendly and energetic dog who loves to play and cuddle!</p>
+                        <a href="#" class="btn btn-primary">Adopt Buddy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Pet 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Mittens</h5>
+                        <p class="card-text">Age: 2 years | Breed: Domestic Shorthair</p>
+                        <p class="card-text">Mittens is a sweet and playful cat who loves to lounge in the sun.</p>
+                        <a href="#" class="btn btn-primary">Adopt Mittens</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Pet 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Charlie</h5>
+                        <p class="card-text">Age: 4 years | Breed: Beagle</p>
+                        <p class="card-text">Charlie is a curious and friendly dog who enjoys walks and playtime.</p>
+                        <a href="#" class="btn btn-primary">Adopt Charlie</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center mt-5">
+        <h2>Why Adopt?</h2>
+        <p>
+            Adopting a pet saves lives. Our pets come vaccinated, spayed/neutered, and ready for their new homes. When you adopt, you gain a loyal friend for life.
+        </p>
+    </div>
+
+    <footer class="footer bg-light text-center mt-5">
+        <span class="text-muted">© 2024 FureverHome. All rights reserved.</span>
+        <br>
+        <a href="#" class="text-muted">Privacy Policy</a> |
+        <a href="#" class="text-muted">Terms of Service</a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
