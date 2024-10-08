@@ -1,0 +1,5 @@
+<h1>All Adoptions</h1>
+
+<% @adoptions.each do |adoption| %>
+  <p><%= adoption.status %> - Pet: <%= adoption.pet_id %> - User: <%= adoption.user_id %></p>
+<% end %>
