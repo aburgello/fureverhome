@@ -20,6 +20,8 @@ class DogApiService
     parsed_response.map do |dog|
       next unless dog['breeds'] && dog['breeds'].any?
 
+      sleep 1 # Add a delay of 1 second between each API request
+
       {
         name: dog['breeds'].first['name'],
         description: dog['breeds'].first['temperament'],
@@ -34,6 +36,8 @@ class DogApiService
     parsed_response = JSON.parse(response)
     parsed_response.map do |cat|
       next unless cat['breeds'] && cat['breeds'].any?
+
+      sleep 1 # Add a delay of 1 second between each API request
 
       {
         name: cat['breeds'].first['name'],

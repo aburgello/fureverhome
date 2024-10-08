@@ -2,12 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FureverHome</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<%= stylesheet_link_tag 'index', media: 'all', 'data-turbo-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FureverHome</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <%= stylesheet_link_tag 'index', media: 'all', 'data-turbo-track': 'reload' %>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">FureverHome</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="#about-us">About Us</a>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Pets', pets_path, class: 'nav-link' %>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/edit">My Account</a>
+                </li>
+                <li class="nav-item">
+                  <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'nav-link' %>
+                </li>
+            <% else %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/sign_in">Sign In</a>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+</nav>
+
+
 <div class="container text-center mt-5">
     <h1>Welcome to FureverHome!</h1>
     <h2>Where you can adopt pets</h2>
@@ -17,46 +51,35 @@
     </p>
 </div>
 
-    <div class="container text-center mt-5">
-        <h1>Welcome to FureverHome!</h1>
-        <h2>Where you can adopt pets</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus
-            ultrices eleifend gravida, nulla nunc lacinia mi, at interdum sem justo
-            ullamcorper neque. Morbi lectus nisl, sagittis et malesuada sagittis,
-            convallis at tellus.
-        </p>
-    </div>
+<div class="container text-center mt-5" id="about-us">
+    <h2>About Our Pets</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt metus
+        non justo venenatis, a faucibus mi faucibus. Integer vel sapien sit amet nulla
+        tincidunt tincidunt. Sed volutpat, leo in blandit facilisis, sapien sapien
+        elementum odio, a auctor arcu magna at justo.
+    </p>
+</div>
 
-    <div class="container text-center mt-5">
-        <h2>About Our Pets</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt metus
-            non justo venenatis, a faucibus mi faucibus. Integer vel sapien sit amet nulla
-            tincidunt tincidunt. Sed volutpat, leo in blandit facilisis, sapien sapien
-            elementum odio, a auctor arcu magna at justo.
-        </p>
-    </div>
+<div class="container text-center mt-5">
+    <h2>Why Adopt?</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in arcu eu orci
+        elementum faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et
+        ultrices posuere cubilia curae; Donec consequat, libero sit amet accumsan
+        pretium, nisi ligula fermentum magna, a dapibus massa neque nec odio.
+    </p>
+</div>
 
-    <div class="container text-center mt-5">
-        <h2>Why Adopt?</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in arcu eu orci
-            elementum faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et
-            ultrices posuere cubilia curae; Donec consequat, libero sit amet accumsan
-            pretium, nisi ligula fermentum magna, a dapibus massa neque nec odio.
-        </p>
-    </div>
+<footer class="footer bg-light text-center">
+    <span class="text-muted">© 2024 FureverHome. All rights reserved.</span>
+    <br>
+    <a href="#" class="text-muted">Privacy Policy</a> |
+    <a href="#" class="text-muted">Terms of Service</a>
+</footer>
 
-    <footer class="footer bg-light text-center">
-        <span class="text-muted">© 2024 FureverHome. All rights reserved.</span>
-        <br>
-        <a href="#" class="text-muted">Privacy Policy</a> |
-        <a href="#" class="text-muted">Terms of Service</a>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

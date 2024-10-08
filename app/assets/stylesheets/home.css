@@ -52,3 +52,12 @@ p {
 .footer a:hover {
   text-decoration: underline;
 }
+
+/* Add these rules to ensure all images are the same size */
+img {
+  width: 100%;
+  height: auto;
+  max-width: 350px; /* Set a max-width for the images */
+  max-height: 200px; /* Set a max-height for the images */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}

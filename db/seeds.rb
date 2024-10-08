@@ -26,6 +26,8 @@ pet_service = DogApiService
     puts "Description: #{pet[:description]}"
     puts "Image URL: #{pet[:image_url]}"
     puts "-----------------------------"
+
+    sleep 1
   end
 end
 

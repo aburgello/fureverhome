@@ -1,10 +1,14 @@
 class PetsController < ApplicationController
-
-  def home
+  def index
     @pets = Pet.all
   end
 
-  def index
-    @pets = Pet.all
+  def show
+  end
+
+  def new
+  end
+
+  def edit
   end
 end
