@@ -5,7 +5,7 @@ puts "Seeding Pets!"
 
 pet_service = DogApiService
 
-10.times do
+12.each do |i|
   pets = pet_service.call
 
   pets.each do |pet|
@@ -27,7 +27,7 @@ pet_service = DogApiService
     puts "Image URL: #{pet[:image_url]}"
     puts "-----------------------------"
 
-    sleep 1
+    sleep 5
   end
 end
 

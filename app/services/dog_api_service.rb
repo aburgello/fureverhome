@@ -7,41 +7,47 @@ class DogApiService
   CAT_API_URL = "https://api.thecatapi.com/v1/images/search"
   CAT_API_KEY = "live_a3OSAAo72Ajbn3kcIFD07MnuOe3lAZjhTAmj1lxMJp3Jvov8gb2L7vCbYhggDvVa"
 
-  def self.call
-    dogs = fetch_dogs
-    cats = fetch_cats
+  def self.call(include_sleep: true)
+    dogs = fetch_dogs(include_sleep)
+    cats = fetch_cats(include_sleep)
     dogs + cats
   end
 
-  def self.fetch_dogs
+  def self.fetch_dogs(include_sleep)
     url = URI("#{DOG_API_URL}?api_key=#{DOG_API_KEY}")
     response = Net::HTTP.get(url)
     parsed_response = JSON.parse(response)
-    parsed_response.map do |dog|
-      next unless dog['breeds'] && dog['breeds'].any?
 
-      sleep 1 # Add a delay of 1 second between each API request
+    parsed_response.map do |dog|
+      # Default values if no breeds are present
+      breed_name = dog['breeds'].any? ? dog['breeds'].first['name'] : 'Unknown'
+      temperament = dog['breeds'].any? ? dog['breeds'].first['temperament'] : 'Unknown temperament'
+
+      sleep 5 if include_sleep
 
       {
-        name: dog['breeds'].first['name'],
-        description: dog['breeds'].first['temperament'],
+        name: breed_name,
+        description: temperament,
         image_url: dog['url']
       }
     end.compact
   end
 
-  def self.fetch_cats
+  def self.fetch_cats(include_sleep)
     url = URI("#{CAT_API_URL}?api_key=#{CAT_API_KEY}")
     response = Net::HTTP.get(url)
     parsed_response = JSON.parse(response)
-    parsed_response.map do |cat|
-      next unless cat['breeds'] && cat['breeds'].any?
 
-      sleep 1 # Add a delay of 1 second between each API request
+    parsed_response.map do |cat|
+      # Default values if no breeds are present
+      breed_name = cat['breeds'].any? ? cat['breeds'].first['name'] : 'Unknown'
+      temperament = cat['breeds'].any? ? cat['breeds'].first['temperament'] : 'Unknown temperament'
+
+      sleep 5 if include_sleep
 
       {
-        name: cat['breeds'].first['name'],
-        description: cat['breeds'].first['temperament'],
+        name: breed_name,
+        description: temperament,
         image_url: cat['url']
       }
     end.compact
