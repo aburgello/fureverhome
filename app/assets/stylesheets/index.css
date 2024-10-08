@@ -32,6 +32,11 @@ nav {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.container:hover {
+  background-color: #f1c40f;
+  transform: scale(1.2);
+}
+
 h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
@@ -47,4 +52,29 @@ h2 {
 p {
   font-size: 1.2rem;
   line-height: 1.6;
+}
+
+.footer {
+  background-color: #f8f9fa; /* Matches the navbar and body background */
+  padding: 1rem 0;
+  bottom: 0;
+  width: 100%; /* Full width of the parent element */
+  left: 0; /* Ensure it's aligned to the left */
+  text-align: center; /* Center the text */
+  margin-top: 50px;
+}
+
+
+.footer .text-muted {
+  color: #6c757d; /* Muted text color */
+  margin: 0.5rem 0; /* Space between lines */
+}
+
+.footer a {
+  color: #343a40; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.footer a:hover {
+  color: #ffc107; /* Hover color for links */
 }
