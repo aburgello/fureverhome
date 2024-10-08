@@ -50,44 +50,24 @@
         </p>
     </div>
 
-    <div class="container mt-5">
-        <h2 class="text-center">Meet Our Pets</h2>
-        <div class="row">
+<div class="container mt-5">
+    <h2 class="text-center">Meet Our Pets</h2>
+    <div class="row">
+        <% @pets.each do |pet| %>
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Pet 1">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="<%= pet.title %>">
                     <div class="card-body">
-                        <h5 class="card-title">Buddy</h5>
-                        <p class="card-text">Age: 3 years | Breed: Golden Retriever</p>
-                        <p class="card-text">Buddy is a friendly and energetic dog who loves to play and cuddle!</p>
-                        <a href="#" class="btn btn-primary">Adopt Buddy</a>
+                        <h5 class="card-title"><%= pet.title %></h5>
+                        <p class="card-text">Age: <%= pet.age || 'Unknown' %> | Breed: <%= pet.breed || 'Unknown' %></p>
+                        <p class="card-text"><%= pet.description %></p>
+                        <a href="#" class="btn btn-primary">Adopt <%= pet.title %></a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Pet 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Mittens</h5>
-                        <p class="card-text">Age: 2 years | Breed: Domestic Shorthair</p>
-                        <p class="card-text">Mittens is a sweet and playful cat who loves to lounge in the sun.</p>
-                        <a href="#" class="btn btn-primary">Adopt Mittens</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Pet 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Charlie</h5>
-                        <p class="card-text">Age: 4 years | Breed: Beagle</p>
-                        <p class="card-text">Charlie is a curious and friendly dog who enjoys walks and playtime.</p>
-                        <a href="#" class="btn btn-primary">Adopt Charlie</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <% end %>
     </div>
+</div>
 
     <div class="container text-center mt-5">
         <h2>Why Adopt?</h2>
