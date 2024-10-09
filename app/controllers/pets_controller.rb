@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: %i[new create edit update destroy]
   before_action :authorise_owner!, only: %i[new create edit update destroy]
 
   def index
