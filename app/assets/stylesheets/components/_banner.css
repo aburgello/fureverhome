@@ -1,0 +1,29 @@
+.banner-section {
+  background-image: url('https://cdn.pixabay.com/photo/2018/04/23/14/38/dog-3344414_1280.jpg'); /* Replace with your new image URL */
+  background-size: cover;
+  background-position: center;
+  height: 60vh; /* Shortened height */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align the text */
+  justify-content: center; /* Vertically center text */
+  text-align: center;
+  position: relative;
+  color: white;
+}
+
+.banner-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Darker mask with higher opacity */
+  z-index: 1;
+}
+
+.banner-section h1, .banner-section p, .banner-section .stylish-button {
+  position: relative;
+  z-index: 2; /* Ensure content is above the mask */
+}
