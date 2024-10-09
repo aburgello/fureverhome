@@ -1,9 +1,10 @@
-<h1> My Pets </h1>
+<h1>My Pets</h1>
+
 <% if @pets.any? %>
   <ul>
     <% @pets.each do |pet| %>
       <li id="<%= dom_id(pet) %>">
-        <%= link_to pet.title, pet_path(pet, from: 'my_pets') %> - <%= pet.breed %> - <%= pet.age %> years old
+        <%= link_to pet.title, pet_path(pet) %> - <%= pet.breed %> - <%= pet.age %> years old
         <%= link_to 'Delete', pet_path(pet), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
       </li>
     <% end %>
