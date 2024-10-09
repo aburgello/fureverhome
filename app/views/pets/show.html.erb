@@ -33,7 +33,7 @@
           <% if @pet.image_url.present? %>
             <%= image_tag @pet.image_url, alt: @pet.title, class: 'img-fluid', style: "height: 360px; object-fit: cover; border-radius: 25px;" %>
           <% else %>
-            <%= image_tag 'default_image.png', alt: 'Default Image', class: 'img-fluid', style: "max-height: 300px; object-fit: cover; border-radius: 25px;" %>
+            <%= image_tag @pet.display_image_url, alt: @pet.title, class: 'img-fluid', style: "max-height: 300px; object-fit: cover; border-radius: 25px;" %>
           <% end %>
         </div>
       </div>
