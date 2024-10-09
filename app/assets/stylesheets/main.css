@@ -7,3 +7,21 @@
 @import url('components/_button.css');
 @import url('components/_banner.css');
 @import url('pages/_home.css');
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  .footer {
+    padding: 25px 0;
+  }

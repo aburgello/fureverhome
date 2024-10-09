@@ -13,8 +13,9 @@ body {
       max-width: 100%;
       height: auto;
     }
-  } /* Genral Styles for Cuter Look */
+  } /* General Styles for Cuter Look */
 }
+
 /* General Stylish Section */
 .stylish-section {
   margin-bottom: 0; /* Remove any bottom margin */
@@ -39,44 +40,40 @@ body {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Slight shadow to add depth */
 }
 
-
-
 .stylish-section p {
-  font-family: 'Montserrat', sans-serif; /* You can also use 'Lato' here */
-  font-size: 1.1rem; /* Slightly larger than the default size for better readability */
-  color: #333; /* Dark grey for a clean, readable look */
-  line-height: 1.6; /* Spacing between lines for better readability */
-  margin-bottom: 20px; /* Consistent spacing between paragraphs */nsistent spacing between paragraphs */
-
+  font-size: 1rem; /* Standard paragraph font size */
+  color: #666; /* Medium grey for readability */
+  line-height: 1.6; /* Comfortable line height for reading */
+  margin-bottom: 20px; /* Space between paragraphs */
 }
 
-.stylish-section .stylish-button {
-  background-color: #333; /* Dark, stylish background */
-  color: white;
+/* Button Styles */
+.stylish-button, .meet-our-pets-button {
+  background-color: #FFA756; /* Logo color for buttons */
+  color: white !important; /* Force white text color with important flag */
+  padding: 12px 25px;
   border: none;
-  padding: 12px 30px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 30px; /* Rounded for sophistication */
+  border-radius: 30px;
+  font-size: 1.2rem; /* Normal, readable font */
+  font-family: 'Montserrat', sans-serif; /* Use Montserrat or your base font */
   text-transform: uppercase;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease;
   letter-spacing: 0.5px;
+  text-decoration: none; /* Prevent underline */
 }
 
-.stylish-section .stylish-button:hover {
-  background-color: #555; /* Lighter dark shade on hover */
+/* Hover Effect for Buttons */
+.stylish-button:hover, .meet-our-pets-button:hover {
+  background-color: #A5B68D; /* Green shade on hover */
   cursor: pointer;
-  transform: translateY(-2px); /* Slight hover effect for interaction */
+  text-decoration: none; /* Prevent underline on hover */
 }
 
-.stylish-section a {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.2s ease;
-}
-
-.stylish-section a:hover {
-  color: #555; /* Subtle hover effect for links */
+/* Specific Styles for Meet Our Pets Button */
+.meet-our-pets-button {
+  margin-top: 20px; /* Add spacing if needed */
+  color: white !important; /* Force white text specifically for this button */
+  text-decoration: none; /* Prevent underline */
 }
 
 .container-wide {
