@@ -16,6 +16,7 @@ pet_service = DogApiService
       description: pet[:description] || "A wonderful pet.",
       breed: pet[:name],
       age: rand(1..10),
+      user_id: 1,
       status: 'available',
       image_url: pet[:image_url]
     )
