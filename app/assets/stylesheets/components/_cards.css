@@ -1,9 +1,20 @@
 .card {
   margin: 20px 0;
-  img {
-    height: 200px;
-    object-fit: cover;
-  }
+  border-radius: 15px;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card:hover {
+  transition: 0.3s ease;
+  transform: scale(1.05);
+}
+
 
   .card-title {
     font-size: 1.25rem;
@@ -13,6 +24,7 @@
   .card-text {
     font-size: 1rem;
     margin-bottom: 15px;
+    color: black;
   }
 
   .btn {
@@ -21,4 +33,4 @@
       background-color: #0056b3;
     }
   }
-}
+
