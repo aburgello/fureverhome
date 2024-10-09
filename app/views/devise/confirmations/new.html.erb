@@ -1,4 +1,4 @@
-<h2 class="text-center" style="text-decoration: none">Resend Confirmation Instructions</h2>
+<h2 class="text-center mt-4" style="text-decoration: none">Resend Confirmation Instructions</h2>
 
 <div class="container">
   <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
@@ -21,3 +21,5 @@
   <%= render "devise/shared/links" %>
 </div>
 </div>
+
+    <%= stylesheet_link_tag 'main', media: 'all', 'data-turbo-track': 'reload' %>
