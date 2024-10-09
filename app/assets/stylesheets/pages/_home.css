@@ -1,0 +1,80 @@
+/* General Body */
+body {
+  background-color: #F2F0E6; /* Light beige for the overall background */
+  color: #333; /* Dark grey text for general readability */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.home-page {
+  .why-adopt {
+    padding: 50px 0;
+    margin-top: 0;
+    .img-fluid {
+      max-width: 100%;
+      height: auto;
+    }
+  } /* Genral Styles for Cuter Look */
+}
+/* General Stylish Section */
+.stylish-section {
+  margin-bottom: 0; /* Remove any bottom margin */
+  padding-bottom: 40px; /* Adjust padding to ensure space between content and bottom */
+  font-family: 'Montserrat', sans-serif; /* Modern, clean font */
+  background-color: #f5f5f5; /* Light neutral background */
+  padding: 60px 30px;
+  border-radius: 8px; /* Soft, subtle corners */
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
+  color: #333; /* Darker, elegant text color */
+  text-align: center;
+}
+
+/* Stylish Section - Applying Gagalin to h1 */
+.stylish-section h2 {
+  font-family: 'Bangers', cursive; /* Change this to 'Bangers' if you prefer */
+  font-size: 2.8rem;
+  color: #333; /* Dark color similar to the one in the image */
+  letter-spacing: 1px; /* Slight letter spacing for readability */
+  text-transform: uppercase; /* Uppercase for bold impact */
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Slight shadow to add depth */
+}
+
+
+
+.stylish-section p {
+  font-family: 'Montserrat', sans-serif; /* You can also use 'Lato' here */
+  font-size: 1.1rem; /* Slightly larger than the default size for better readability */
+  color: #333; /* Dark grey for a clean, readable look */
+  line-height: 1.6; /* Spacing between lines for better readability */
+  margin-bottom: 20px; /* Consistent spacing between paragraphs */nsistent spacing between paragraphs */
+
+}
+
+.stylish-section .stylish-button {
+  background-color: #333; /* Dark, stylish background */
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px; /* Rounded for sophistication */
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.stylish-section .stylish-button:hover {
+  background-color: #555; /* Lighter dark shade on hover */
+  cursor: pointer;
+  transform: translateY(-2px); /* Slight hover effect for interaction */
+}
+
+.stylish-section a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.stylish-section a:hover {
+  color: #555; /* Subtle hover effect for links */
+}
