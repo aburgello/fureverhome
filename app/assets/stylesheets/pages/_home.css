@@ -1,6 +1,6 @@
 /* General Body */
 body {
-  background-color: #F2F0E6; /* Light beige for the overall background */
+  background-color: white; /* Light beige for the overall background */
   color: #333; /* Dark grey text for general readability */
   font-family: 'Montserrat', sans-serif;
 }
@@ -74,4 +74,18 @@ body {
   margin-top: 20px; /* Add spacing if needed */
   color: white !important; /* Force white text specifically for this button */
   text-decoration: none; /* Prevent underline */
+}
+
+.container-wide {
+  max-width: 1400px; /* Increase the max-width to make the section wider */
+  margin: 0 auto; /* Center the container */
+  padding: 0 20px; /* Narrow edge on the left and right */
+}
+
+/* Custom Divider Styling */
+.section-divider {
+  border: none; /* Remove default border */
+  height: 2px; /* Set height for the divider */
+  background-color: #EDE8DC; /* Light beige background to match the site */
+  margin: 40px 0; /* Add spacing around the divider */
 }

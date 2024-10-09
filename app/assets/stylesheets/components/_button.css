@@ -1,7 +1,6 @@
-/* General Button Styles */
-.stylish-button, .meet-our-pets-button {
+.stylish-button {
   background-color: #FFA756; /* Logo color for buttons */
-  color: white !important; /* Force white text color with important flag */
+  color: white !important; /* Force white text color */
   padding: 12px 25px;
   border: none;
   border-radius: 30px;
@@ -12,14 +11,27 @@
   letter-spacing: 0.5px;
 }
 
-/* Hover Effect for Buttons */
-.stylish-button:hover, .meet-our-pets-button:hover {
+.stylish-button:hover {
   background-color: #A5B68D; /* Green shade on hover */
   cursor: pointer;
 }
 
-/* Specific Styles for Meet Our Pets Button */
-.meet-our-pets-button {
-  margin-top: 20px; /* Add spacing if needed */
-  color: white !important; /* Force white text specifically for this button */
+/* Button Styling */
+.btn-stylish {
+  background-color: #FFA756;
+  color: white !important; /* Force white text for the button */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: auto;
+  text-align: center;
+}
+
+.btn-stylish:hover {
+  background-color: #A5B68D;
+  transform: translateY(-2px);
 }
