@@ -15,7 +15,7 @@
 /* Hover Effect for Buttons */
 .stylish-button:hover, .meet-our-pets-button:hover {
   background-color: #A5B68D; /* Green shade on hover */
-  cursor: url(http://www.zingerbugimages.com/cursors/paws1.ani), url(http://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
+  cursor: url(http://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
 }
 /* Specific Styles for Meet Our Pets Button */
 .meet-our-pets-button {
