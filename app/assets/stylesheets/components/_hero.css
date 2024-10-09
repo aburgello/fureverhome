@@ -97,10 +97,9 @@
   border-radius: 25px;
   display:block;
   position:relative;
-  transition:all .8s ease;
+  transition:all 1s ease;
 }
 
-.hovereffect:hover {
-  scale: 1.06;
-  
+.hovereffect:hover img {
+  transform: scale(1.2);
 }
