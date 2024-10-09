@@ -14,10 +14,11 @@
 
 .card:hover {
   transform: scale(1.10);
-}
+  border-color: rgb(228, 156, 62);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;}
 
 .card:hover img {
-  -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/350% 100%;
+  -webkit-mask:linear-gradient(-60deg,#464646 50%,rgba(48, 48, 48, 0.333),#a8a8a8 70%) right/360% 100%;
   background-repeat: no-repeat;
   animation: shimmer 1.3s ease-out;
   overflow: hidden;
