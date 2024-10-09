@@ -1,0 +1,76 @@
+@keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0; transform: scale(1.5); }
+  }
+
+  .pet-header h1 {
+    color: #333;
+    font-size: 3rem;
+    text-align: center;
+    font-family: 'Bangers';
+  }
+
+  .sparkles {
+    position: relative;
+    display: inline-block;
+  }
+
+  .sparkles::before, .sparkles::after {
+    content: '✨';
+    position: absolute;
+    font-size: 1.5rem;
+    color: #FFD700;
+    animation: sparkle 1.5s infinite ease-in-out;
+  }
+
+  .sparkles::before {
+    top: -10px;
+    left: -25px;
+  }
+
+  .sparkles::after {
+    bottom: -10px;
+    right: -25px;
+  }
+
+  .pet-image {
+    display: block;
+    margin: 0 auto;
+    border-radius: 25px;
+    max-width: 90%;
+    max-height: 400px;
+    object-fit: cover;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+
+  .pet-details {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .pet-details h5 {
+    font-size: 1.5rem;
+    color: #c5a880;
+    margin-bottom: 20px;
+  }
+
+  .pet-details p {
+    font-size: 1.2rem;
+  }
+
+  .btn-custom {
+    background-color: #c5a880;
+    border: none;
+  }
+
+  .btn-custom:hover {
+    background-color: #b0906a;
+  }
+
+  .details-section {
+    margin-bottom: 20px;
+  }
