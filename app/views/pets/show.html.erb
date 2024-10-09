@@ -1,36 +1,37 @@
-<h1><%= @pet.title %></h1>
+<h1 class="text-center my-4"><%= @pet.title %></h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @pet.description %>
-</p>
+<div class="container">
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Details</h5>
+      <p class="card-text">
+        <strong>Description:</strong> <%= @pet.description %>
+      </p>
+      <p class="card-text">
+        <strong>Breed:</strong> <%= @pet.breed %>
+      </p>
+      <p class="card-text">
+        <strong>Age:</strong> <%= @pet.age %> years old
+      </p>
+      <p class="card-text">
+        <strong>Status:</strong> <%= @pet.status.humanize %>
+      </p>
 
-<p>
-  <strong>Breed:</strong>
-  <%= @pet.breed %>
-</p>
+      <% if @pet.image_url.present? %>
+        <div class="mb-3">
+          <strong>Image:</strong><br>
+          <% if asset_exists?(@pet.image_url) %>
+            <%= image_tag @pet.image_url, alt: @pet.title, class: 'img-fluid' %>
+          <% else %>
+            <%= image_tag 'default_image.png', alt: 'Default Image', class: 'img-fluid' %>
+          <% end %>
+        </div>
+      <% end %>
 
-<p>
-  <strong>Age:</strong>
-  <%= @pet.age %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @pet.status %>
-</p>
-
-<% if @pet.image_url.present? %>
-  <p>
-    <strong>Image:</strong><br>
-    <% if asset_exists?(@pet.image_url) %>
-      <%= image_tag @pet.image_url, alt: @pet.title %>
-    <% else %>
-      <%= image_tag 'default_image.png', alt: 'Default Image' %>
-    <% end %>
-  </p>
-<% end %>
-
-<%= link_to 'Edit', edit_pet_path(@pet), class: 'btn btn-primary' %> |
-
-<%= link_to 'Back', my_pets_path, class: 'btn btn-secondary' %>
+      <div class="d-flex justify-content-between mt-4">
+        <%= link_to 'Edit', edit_pet_path(@pet), class: 'btn btn-primary' %>
+        <%= link_to 'Back', my_pets_path, class: 'btn btn-secondary' %>
+      </div>
+    </div>
+  </div>
+</div>
