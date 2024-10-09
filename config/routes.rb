@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
 
   resources :pets
-  
+
   get '/my_pets', to: 'pets#my_pets', as: 'my_pets'
 
   resources :pets do
