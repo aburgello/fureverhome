@@ -62,3 +62,6 @@ gem 'devise', '~> 4.9.2'
 
 gem 'faker'
 gem 'sassc-rails'
+
+gem "dotenv-rails"
+
