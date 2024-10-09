@@ -19,7 +19,7 @@
 .card:hover img {
   -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/350% 100%;
   background-repeat: no-repeat;
-  animation: shimmer 1.8s ease-in-out;
+  animation: shimmer 1.3s ease-out;
   overflow: hidden;
   padding:10px;
   padding-bottom:4px;
