@@ -9,7 +9,7 @@
   text-transform: uppercase;
   transition: background-color 0.3s ease;
   letter-spacing: 0.5px;
-  animation: wiggle 2s linear infinite;
+  animation: wiggle 2s 3 linear;
 
 }
 
