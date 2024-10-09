@@ -36,8 +36,7 @@
             <%= link_to "My Account", edit_user_registration_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-             <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %>
-          </li>
+ <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %>          </li>
         <% else %>
           <li class="nav-item">
             <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
