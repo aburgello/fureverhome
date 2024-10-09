@@ -9,6 +9,9 @@ pet_service = DogApiService
   pets = pet_service.call
 
   pets.each do |pet|
+    # Skip pets with "Unknown" name or temperament
+    next if pet[:name] == 'Unknown' || pet[:description] == 'Unknown temperament'
+
     random_name = Faker::Creature::Dog.name
 
     Pet.create(
@@ -25,7 +28,6 @@ pet_service = DogApiService
     puts "Description: #{pet[:description]}"
     puts "Image URL: #{pet[:image_url]}"
     puts "-----------------------------"
-
   end
 
   sleep 5
