@@ -3,14 +3,15 @@
   background-image: url('https://cdn.pixabay.com/photo/2018/10/01/09/21/pets-3715733_1280.jpg'); /* Your background image URL */
   background-size: cover;
   background-position: center;
-  height: 100vh; /* Full viewport height */
+  height: 80vh; 
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center align the text */
-  justify-content: center; /* Vertically center text */
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
   text-align: center;
   position: relative;
   color: #333;
+  padding: 25px;
 }
 
 /* Darker Background Mask */
@@ -35,10 +36,46 @@
   color: #ffffff; /* Logo color */
   font-size: 3.5rem;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 16px #382e25;
 }
 
 .hero-section p {
   color: #FCFAEE; /* Light cream text for contrast */
   font-size: 1.2rem;
   margin-bottom: 30px;
+  text-shadow: 2px 2px 4px #382e25;
+}
+
+/* Stylish Sections */
+.stylish-section {
+  padding: 60px 0;
+}
+
+.stylish-section h2 {
+  margin-bottom: 20px;
+  color: #c5a880; /* Use your beige-like color */
+}
+
+.stylish-section p {
+  color: #333; /* Adjust text color for readability */
+}
+
+.meet-our-pets-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #c5a880; /* Your button color */
+  color: #fff; /* Button text color */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.meet-our-pets-button:hover {
+  background-color: #d5b39e; /* Lighter shade for hover effect */
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Rounded corners for images */
 }
