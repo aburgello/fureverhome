@@ -25,6 +25,7 @@
   }
 
   main {
+    background: linear-gradient(to bottom right, #eef2f3, #ffffff);
     flex: 1;
   }
 
