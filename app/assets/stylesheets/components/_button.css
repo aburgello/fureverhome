@@ -1,0 +1,25 @@
+/* General Button Styles */
+.stylish-button, .meet-our-pets-button {
+  background-color: #FFA756; /* Logo color for buttons */
+  color: white !important; /* Force white text color with important flag */
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem; /* Normal, readable font */
+  font-family: 'Montserrat', sans-serif; /* Use Montserrat or your base font */
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+/* Hover Effect for Buttons */
+.stylish-button:hover, .meet-our-pets-button:hover {
+  background-color: #A5B68D; /* Green shade on hover */
+  cursor: pointer;
+}
+
+/* Specific Styles for Meet Our Pets Button */
+.meet-our-pets-button {
+  margin-top: 20px; /* Add spacing if needed */
+  color: white !important; /* Force white text specifically for this button */
+}
