@@ -65,20 +65,21 @@
     <div class="row">
         <% @pets.each do |pet| %>
             <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="<%= pet.image_url.presence || asset_path('default_image.png') %>" class="card-img-top" alt="<%= pet.title %>">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= pet.title %></h5>
-                        <p class="card-text">Age: <%= pet.age || 'Unknown' %> | Breed: <%= pet.breed || 'Unknown' %></p>
-                        <p class="card-text"><%= pet.description %></p>
-                        <a href="#" class="btn btn-primary">Adopt <%= pet.title %></a>
+                <%= link_to pet_path(pet), class: 'card-link' do %>
+                    <div class="card">
+                        <img src="<%= pet.image_url.presence || asset_path('default_image.png') %>" class="card-img-top" alt="<%= pet.title %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= pet.title %></h5>
+                            <p class="card-text">Age: <%= pet.age || 'Unknown' %> | Breed: <%= pet.breed || 'Unknown' %></p>
+                            <p class="card-text"><%= pet.description %></p>
+                            <a href="#" class="btn btn-primary">Adopt <%= pet.title %></a>
+                        </div>
                     </div>
-                </div>
+                <% end %>
             </div>
         <% end %>
     </div>
 </div>
-
 
 </body>
 </html>
