@@ -1,0 +1,8 @@
+/* Import all component CSS files */
+@import url('components/_about.css');
+@import url('components/_cards.css');
+@import url('components/_footer.css');
+@import url('components/_hero.css');
+@import url('components/_navbar.css');
+@import url('components/_button.css');
+@import url('pages/_home.css');

@@ -5,70 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FureverHome</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <%= stylesheet_link_tag 'index', media: 'all', 'data-turbo-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <%= stylesheet_link_tag 'main', media: 'all', 'data-turbo-track': 'reload' %>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">FureverHome</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to "/", class: "navbar-brand" do %>
+      <%= image_tag "Furver-home.png" %>
+    <% end %>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#about-us">About Us</a>
-            </li>
-            <li class="nav-item">
-                <%= link_to 'Pets', pets_path, class: 'nav-link' %>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            <% if user_signed_in? %>
-                <li class="nav-item">
-                    <a class="nav-link" href="/users/edit">My Account</a>
-                </li>
-                <li class="nav-item">
-                  <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'nav-link' %>
-                </li>
-            <% else %>
-                <li class="nav-item">
-                    <a class="nav-link" href="/users/sign_in">Sign In</a>
-                </li>
-            <% end %>
-        </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <%= link_to "Home", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Pets", pets_path, class: "nav-link" %>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "My Account", edit_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+          </li>
+        <% end %>
+      </ul>
     </div>
+  </div>
 </nav>
 
-
-<div class="container text-center mt-5">
+<!-- Hero Section -->
+<section class="hero-section">
     <h1>Welcome to FureverHome!</h1>
-    <h2>Where you can adopt pets</h2>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus
-        ultrices eleifend gravida
-    </p>
-</div>
+    <p>Find your new best friend today!</p>
+    <a href="<%= pets_path %>" class="stylish-button">See Pets Available for Adoption</a>
+</section>
 
-<div class="container text-center mt-5" id="about-us">
+<!-- Meet Our Pets Section -->
+<section class="stylish-section text-center" id="about-us">
     <h2>About Our Pets</h2>
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt metus
-        non justo venenatis, a faucibus mi faucibus. Integer vel sapien sit amet nulla
-        tincidunt tincidunt. Sed volutpat, leo in blandit facilisis, sapien sapien
-        elementum odio, a auctor arcu magna at justo.
+        At FureverHome, every pet has a heart full of love just waiting to be shared!
+        From curious kittens to loyal dogs, each of our furry friends has their own unique
+        personality and adorable quirks. We’re here to help you find your perfect companion.
     </p>
-</div>
+    <a href="#" class="meet-our-pets-button">Meet Our Pets</a>
+</section>
 
-<div class="container text-center mt-5">
+<!-- Why Adopt Section -->
+<section class="stylish-section text-center" id="why-adopt">
     <h2>Why Adopt?</h2>
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in arcu eu orci
-        elementum faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et
-        ultrices posuere cubilia curae; Donec consequat, libero sit amet accumsan
-        pretium, nisi ligula fermentum magna, a dapibus massa neque nec odio.
+        Adopting a pet isn’t just about giving them a new home; it’s about giving them a second chance at a happy, fulfilling life.
+        When you adopt, you’re saving a life and opening your heart to an endless source of love and joy. From reducing the number of
+        homeless animals to gaining a loyal companion, the impact of adoption is truly life-changing for both you and your new furry friend.
     </p>
+
+</section>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    All rights reserved <i class="fas fa-heart"></i>  Furever Home
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
 </div>
+
 
 </html>
