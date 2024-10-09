@@ -19,7 +19,7 @@ html, body {
 
   main {
     flex: 1;
-    background: linear-gradient(to bottom, #f0e7d8, #f5f2ed);
+    background: linear-gradient(to bottom, #f0e4d4, #fffdfb);
   }
 
   .footer {
@@ -48,4 +48,5 @@ html, body {
   font-family: 'Bangers';
   font-size: 3rem;
   color: #333;
-}   
+}  
+

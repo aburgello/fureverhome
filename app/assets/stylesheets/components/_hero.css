@@ -80,3 +80,27 @@
     text-align: center; 
   }
 }
+.hovereffect {
+  height: 100%;
+  width: 100%;
+  overflow:hidden;
+  position:relative;
+  text-align:center;
+  cursor:default;
+  border-radius: 25px;
+  transition:all .8s ease;
+
+  }
+
+.hovereffect img {
+  margin-right: 10px;
+  border-radius: 25px;
+  display:block;
+  position:relative;
+  transition:all .8s ease;
+}
+
+.hovereffect:hover {
+  scale: 1.06;
+  
+}
