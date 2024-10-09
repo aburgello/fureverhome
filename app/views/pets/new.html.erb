@@ -1,6 +1,6 @@
 <h1 class="text-center my-4" id="index-title">New Pet</h1>
 
-<%= form_with model: @pet, local: true, class: 'container p-4 rounded mb-3' do |f| %>
+<%= form_with model: @pet, local: true, class: 'container pb-4 rounded mb-3' do |f| %>
   <div class="mb-3">
     <%= f.label :title, class: 'form-label' %>
     <%= f.text_field :title, class: 'form-control', placeholder: 'Enter the name of your little friend' %>
