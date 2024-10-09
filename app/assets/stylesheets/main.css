@@ -19,6 +19,7 @@ html, body {
 
   main {
     flex: 1;
+    background: linear-gradient(to bottom, #f0e7d8, #f5f2ed);
   }
 
   .footer {
@@ -31,3 +32,20 @@ html, body {
     align-items: center;
     margin: 0 auto;
   }
+
+  .edit-btn {
+    background-color: #c5a880;
+    border-color: rgb(207, 207, 207);
+    color: white;
+    &:hover {
+      background-color: #867153;
+      color: white;
+      border-color: white;
+      transition: 0.3s ease;
+  }}
+
+#index-title {
+  font-family: 'Bangers';
+  font-size: 3rem;
+  color: #333;
+}   
