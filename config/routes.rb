@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get "pets/index"
-  get "pets/show"
-  get "pets/new"
-  get "pets/edit"
+
   devise_for :users
   get "landing/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -22,4 +19,5 @@ Rails.application.routes.draw do
   root 'landing#index'
 
   resources :pets
+  
 end
