@@ -1,0 +1,16 @@
+<h1> My Pets </h1>
+<% if @pets.any? %>
+  <ul>
+    <% @pets.each do |pet| %>
+      <li id="<%= dom_id(pet) %>">
+        <%= link_to pet.title, pet_path(pet, from: 'my_pets') %> - <%= pet.breed %> - <%= pet.age %> years old
+        <%= link_to 'Delete', pet_path(pet), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You have not created any pet listings yet.</p>
+<% end %>
+
+<%= link_to 'Create New Pet', new_pet_path, class: 'btn btn-primary' %> |
+<%= link_to 'Back to All Pets', pets_path, class: 'btn btn-secondary' %>
