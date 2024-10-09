@@ -14,7 +14,6 @@ pet_service = DogApiService
     Pet.create(
       title: random_name,
       description: pet[:description] || "A wonderful pet.",
-      user_id: 1,
       breed: pet[:name],
       age: rand(1..10),
       status: 'available',

@@ -46,6 +46,12 @@
     </div>
   </div>
 </nav>
+<% if user_signed_in? && current_user.role == 'owner' %>
+  <div class="container mt-5 d-flex justify-content-end">
+    <a href="/pets/new" class="btn btn-success me-2">Create</a>
+    <a href="/my_pets" class="btn btn-success">My Pets</a>
+  </div>
+<% end %>
 
 <div class="container text-center mt-5">
     <h1>Your Next Best Friend Awaits</h1>
@@ -66,30 +72,21 @@
     <div class="row">
         <% @pets.each do |pet| %>
             <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="<%= pet.image_url.presence || 'https://via.placeholder.com/350x200' %>" class="card-img-top" alt="<%= pet.title %>">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= pet.title %></h5>
-                        <p class="card-text">Age: <%= pet.age || 'Unknown' %> | Breed: <%= pet.breed || 'Unknown' %></p>
-                        <p class="card-text"><%= pet.description %></p>
-                        <a href="#" class="btn btn-primary">Adopt <%= pet.title %></a>
+                <%= link_to pet_path(pet), class: 'card-link' do %>
+                    <div class="card">
+                        <img src="<%= pet.image_url.presence || asset_path('default_image.png') %>" class="card-img-top" alt="<%= pet.title %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= pet.title %></h5>
+                            <p class="card-text">Age: <%= pet.age || 'Unknown' %> | Breed: <%= pet.breed || 'Unknown' %></p>
+                            <p class="card-text"><%= pet.description %></p>
+                            <a href="#" class="btn btn-primary">Adopt <%= pet.title %></a>
+                        </div>
                     </div>
-                </div>
+                <% end %>
             </div>
         <% end %>
     </div>
 </div>
 
-
-<footer class="footer bg-light text-center mt-5">
-    <span class="text-muted">© 2024 FureverHome. All rights reserved.</span>
-    <br>
-    <a href="#" class="text-muted">Privacy Policy</a> |
-    <a href="#" class="text-muted">Terms of Service</a>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
