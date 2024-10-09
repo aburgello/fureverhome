@@ -17,21 +17,23 @@
         <strong>Status:</strong> <%= @pet.status.humanize %>
       </p>
 
-      <% if @pet.image_url.present? %>
-        <div class="mb-3">
-          <strong>Image:</strong><br>
-          <% if asset_exists?(@pet.image_url) %>
+      <div class="mb-3">
+        <strong>Image:</strong><br>
+        <div class="image-container">
+          <% if @pet.image_url.present? %>
             <%= image_tag @pet.image_url, alt: @pet.title, class: 'img-fluid' %>
           <% else %>
             <%= image_tag 'default_image.png', alt: 'Default Image', class: 'img-fluid' %>
           <% end %>
         </div>
-      <% end %>
+      </div>
 
       <div class="d-flex justify-content-between mt-4">
         <%= link_to 'Edit', edit_pet_path(@pet), class: 'btn btn-primary' %>
-        <%= link_to 'Back', my_pets_path, class: 'btn btn-secondary' %>
+        <%= link_to 'Back', pets_path, class: 'btn btn-secondary' %>
       </div>
     </div>
   </div>
 </div>
+
+
