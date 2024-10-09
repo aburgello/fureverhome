@@ -1,0 +1,41 @@
+<h1>New Pet</h1>
+
+<%= form_with model: @pet, local: true do |f| %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :breed %><br>
+    <%= f.text_field :breed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select :status, options_for_select([['Available', 'available'], ['Adopted', 'adopted']]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image_url %><br>
+    <%= f.text_field :image_url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create Pet" %>
+  </div>
+<% end %>
+
+<div class="actions">
+  <%= link_to 'Back', pets_path, class: 'btn btn-secondary' %>
+</div>

@@ -39,6 +39,11 @@
         </ul>
     </div>
 </nav>
+<% if user_signed_in? && current_user.role == 'owner' %>
+  <div class="container mt-5 position-relative">
+    <a href="/pets/new" class="btn btn-success position-absolute" style="right: 0;">Create</a>
+  </div>
+<% end %>
 
 <div class="container text-center mt-5">
     <h1>Your Next Best Friend Awaits</h1>
