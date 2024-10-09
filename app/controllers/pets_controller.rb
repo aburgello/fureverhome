@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create edit update destroy]
+  before_action :authenticate_user!, only: %i[new create edit update destroy my_pets]
   before_action :authorise_owner!, only: %i[new create edit update destroy]
 
   def index
@@ -17,7 +17,7 @@ class PetsController < ApplicationController
   def create
     @pet = current_user.pets.build(pet_params)
     if @pet.save
-      redirect_to @pet, notice: 'Pet listing created successfully.'
+      redirect_to my_pets_path, notice: 'Pet listing created successfully.'
     else
       render :new
     end
@@ -39,7 +39,14 @@ class PetsController < ApplicationController
   def destroy
     @pet = Pet.find(params[:id])
     @pet.destroy
-    redirect_to pets_path, notice: 'Pet listing deleted.'
+    respond_to do |format|
+    format.html { redirect_to pets_path, notice: 'Pet listing deleted.' }
+    format.turbo_stream
+    end
+  end
+
+  def my_pets
+    @pets = current_user.pets
   end
 
   private
