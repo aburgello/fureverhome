@@ -13,7 +13,7 @@
 <nav class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "Furver-home.png", alt: "FureverHome Logo" %>
+      <%= image_tag "Furver-home.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,64 +56,40 @@
 </div>
 </nav>
 
-<!-- Hero Section -->
-<div class="banner-section text-center">
+<div class="container text-center mt-5">
     <h1>Your Next Best Friend Awaits</h1>
     <p>
         Explore our wide variety of pets available for adoption! Each pet is looking for a loving home, and we can't wait to help you find your perfect match.
     </p>
 </div>
 
-<!-- Create Pet Button Section -->
-<% if user_signed_in? && current_user.role == 'owner' %>
-  <div class="container mt-4 d-flex justify-content-end">
-    <a href="/pets/new" class="btn stylish-button me-2">Create a pet listing</a>
-    <a href="/my_pets" class="btn stylish-button">My Pets list</a>
-  </div>
-<% end %>
-
-<section class="stylish-section text-center" id="why-adopt">
+<div class="container text-center mt-5">
     <h2>Why Adopt?</h2>
     <p>
-        Adopting a pet saves lives and brings immeasurable joy. All of our pets are fully vaccinated, spayed or neutered,
-        and eagerly waiting for a loving home. By adopting, you not only give them a second chance, but you also gain a loyal companion for life.
+        Adopting a pet saves lives. Our pets come vaccinated, spayed/neutered, and ready for their new homes. When you adopt, you gain a loyal friend for life.
     </p>
-</section>
-<hr class="section-divider"> <!-- Custom class for styling -->
+</div>
 
-
-<section class="stylish-section text-center" id="meet-our-pets">
-    <h2>Meet Our Pets!</h2>
-    <div class="container">
-        <div class="row">
-            <% @pets.each do |pet| %>
-               <div class="col-md-4 mb-4">
-                  <%= link_to pet_path(pet), class: 'card-link' do %>
+<div class="container mt-5">
+    <h2 class="text-center">Meet Our Pets!</h2>
+    <div class="row">
+        <% @pets.each do |pet| %>
+            <div class="col-md-4 mb-4">
+                <%= link_to pet_path(pet), class: 'card-link' do %>
                     <div class="card">
-
-                      <img src="<%= pet.image_url.presence || asset_path('default_image.png') %>" class="card-img-top" alt="<%= pet.title %>">
-                      <div class="card-body">
-                        <h5 class="card-title"><%= pet.title %></h5>
-                        <p class="card-text">Age: <%= pet.age || 'Unknown' %> | Breed: <%= pet.breed || 'Unknown' %></p>
-                        <p class="card-description"><%= pet.description || 'Unknown temperament' %></p>
-                        <a href="#" class="btn-stylish">Adopt <%= pet.title %></a> <!-- Button centered with white text -->
-                      </div>
-
                         <img src="<%= pet.image_url.presence || asset_path('default_image.png') %>" class="card-img-top" alt="<%= pet.title %>">
                         <div class="card-body">
                             <h5 class="card-title"><%= pet.title %></h5>
                             <p class="card-text">Age: <%= pet.age || 'Unknown' %> | Breed: <%= pet.breed || 'Unknown' %></p>
                             <p class="card-text"><%= pet.description %></p>
                             <%= link_to "Adopt #{pet.title}", pet_path(pet), class: 'btn btn-primary' %>
-
+                        </div>
                     </div>
-                  <% end %>
-                </div>
-
-            <% end %>
-        </div>
+                <% end %>
+            </div>
+        <% end %>
     </div>
-</section>
+</div>
 
 <!-- Include jQuery, Popper.js, and Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -121,5 +97,3 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-ww
-<style>
