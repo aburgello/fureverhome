@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  get "pets/index"
-  get "pets/show"
-  get "pets/new"
-  get "pets/edit"
+
   devise_for :users
-  get "landing/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
