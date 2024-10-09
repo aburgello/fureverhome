@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get 'landing', to: 'landing#index'
   root 'landing#index'
 
+
+  resources :pets
+  
   get '/my_pets', to: 'pets#my_pets', as: 'my_pets'
 
   resources :pets do
