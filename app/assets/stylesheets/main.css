@@ -33,8 +33,6 @@ html, body {
     align-items: center;
     margin: 0 auto;
   }
-<<<<<<< HEAD
-=======
 
   .edit-btn {
     background-color: #c5a880;
@@ -53,4 +51,12 @@ html, body {
   color: #333;
 }  
 
->>>>>>> c749cd27b6e06a5c8468608a54ed5228f7fcdb69
+
+.btn {
+    cursor: url(https://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
+}
+
+.card-link:hover{
+    cursor: url(https://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
+}
+

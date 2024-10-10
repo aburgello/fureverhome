@@ -11,3 +11,29 @@
 .navbar-lewagon .navbar-brand img {
   width: 200px;
 }
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.dropdown-menu {
+  background-color: white;
+  border-radius: 0.5rem;
+  position: absolute;
+  left: auto;
+  right: 0;
+  max-width: auto;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown-menu.show {
+  display: block;
+}

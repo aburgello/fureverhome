@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :pets, dependent: :destroy
+  has_many :adoptions, dependent: :destroy
+  has_many :requests, through: :adoptions, source: :pet
+  has_many :messages
 
   def owner?
     role == 'owner'

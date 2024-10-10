@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <h1>Messages About <%= @adoption.pet.title %></h1>
+
+  <div class="messages-box" id="messages-box" style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+    <% @messages.each do |message| %>
+      <div class="message">
+        <div class="message-header">
+          <strong><%= message.user.name %>:</strong>
+          <small class="text-muted"><%= message.created_at.strftime("%B %d, %Y %H:%M") %></small>
+        </div>
+        <p><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <%= form_with model: [@adoption, @message], local: true, id: 'message_form' do |f| %>
+    <div class="mb-3">
+      <%= f.label :content, "New Message" %>
+      <%= f.text_area :content, class: 'form-control', rows: 3, id: 'message_content' %>
+    </div>
+    <%= f.submit "Send Message", class: 'btn btn-primary' %>
+  <% end %>
+  <%= link_to 'Back to Requests', requests_path, class: 'btn btn-secondary mb-3' %>
+</div>
+
+<style>
+  .message-header {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+
+

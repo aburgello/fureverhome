@@ -23,7 +23,7 @@ class DogApiService
       breed_name = dog['breeds'].any? ? dog['breeds'].first['name'] : 'Unknown'
       temperament = dog['breeds'].any? ? dog['breeds'].first['temperament'] : 'Unknown temperament'
 
-      sleep 5 if include_sleep
+      sleep 2 if include_sleep
 
       {
         name: breed_name,
@@ -43,7 +43,7 @@ class DogApiService
       breed_name = cat['breeds'].any? ? cat['breeds'].first['name'] : 'Unknown'
       temperament = cat['breeds'].any? ? cat['breeds'].first['temperament'] : 'Unknown temperament'
 
-      sleep 5 if include_sleep
+      sleep 2 if include_sleep
 
       {
         name: breed_name,

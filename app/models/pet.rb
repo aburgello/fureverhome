@@ -3,6 +3,8 @@ class Pet < ApplicationRecord
   has_one_attached :image
   validates :location, presence: true
 
+  has_many :adoptions, dependent: :destroy
+
   def display_image_url
     if image.attached?
       Rails.application.routes.url_helpers.rails_blob_url(image, only_path: true)
