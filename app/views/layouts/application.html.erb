@@ -50,7 +50,7 @@
       </a>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
         <li class="nav-item <%= 'active' if current_page?(pets_path) %>">
-          <%= link_to "Requests", pets_path, class: "dropdown-item" %>
+          <%= link_to "Requests", requests_path, class: "dropdown-item" %>
         </li>
         <% if current_user.role == 'owner' %>
           <li class="nav-item <%= 'active' if current_page?(my_pets_path) %>">
