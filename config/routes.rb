@@ -12,11 +12,11 @@ Rails.application.routes.draw do
   get 'landing', to: 'landing#index'
   root 'landing#index'
 
+  # My Pets route outside the resources block
+  get '/my_pets', to: 'pets#my_pets', as: 'my_pets'
+
   # Pet and adoption resources
   resources :pets do
-    collection do
-      get :my_pets
-    end
     resources :adoptions, only: [:new, :create]
   end
 end
