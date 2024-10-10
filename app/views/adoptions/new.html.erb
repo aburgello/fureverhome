@@ -2,12 +2,24 @@
   <h1 class="text-center my-4">Adoption Request for <%= @pet.title %></h1>
 
   <%= form_with model: @adoption, url: pet_adoptions_path(@pet), local: true, class: 'container pb-4 rounded mb-3' do |f| %>
+    <% if @adoption.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@adoption.errors.count, "error") %> prohibited this adoption from being saved:</h2>
+        <ul>
+          <% @adoption.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <%= f.hidden_field :pet_id, value: @pet.id %>
 
     <div class="mb-3">
       <%= f.label :message, "Why do you want to adopt #{ @pet.title }?", class: 'form-label' %>
       <%= f.text_area :message, class: 'form-control', rows: 4, placeholder: 'Tell us why you think this pet is a good fit for you' %>
     </div>
+
 
     <div class="d-flex justify-content-between">
       <div>
