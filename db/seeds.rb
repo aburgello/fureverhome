@@ -5,11 +5,11 @@ puts "Seeding Pets!"
 
 pet_service = DogApiService
 
+
 12.times do |i|
   pets = pet_service.call
 
   pets.each do |pet|
-    # Skip pets with "Unknown" name or temperament
     next if pet[:name] == 'Unknown' || pet[:description] == 'Unknown temperament'
 
     random_name = Faker::Creature::Dog.name
