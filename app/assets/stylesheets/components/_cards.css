@@ -1,6 +1,7 @@
 .card {
   margin: 20px 0;
   border-radius: 15px;
+  transition: all 0.3s ease;
 }
 
 .card img {
@@ -8,15 +9,29 @@
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
-  transition: 0.3s ease;
-  transform: scale(1.05);
+  transform: scale(1.10);
+  border-color: rgb(228, 156, 62);
+  box-shadow: rgba(233, 175, 15, 0.4) 0px 5px, rgba(240, 195, 46, 0.3) 0px 10px, rgba(240, 172, 46, 0.2) 0px 15px, rgba(240, 156, 46, 0.1) 0px 20px, rgba(240, 149, 46, 0.05) 0px 25px;
+
 }
 
-
-  .card-title {
+.card:hover img {
+  -webkit-mask:linear-gradient(-60deg,#464646 50%,rgba(48, 48, 48, 0.333),#a8a8a8 70%) right/360% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 1.3s ease-out;
+  overflow: hidden;
+  padding:10px;
+  padding-bottom:4px;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center center
+}
+  
+.card-title {
     color: rgb(68, 57, 41);
     font-size: 1.25rem;
     margin-bottom: 10px;
@@ -38,4 +53,8 @@
       border-color: white;
       transition: 0.3s ease;
   }
+  }
+
+  @keyframes shimmer {
+    100% {-webkit-mask-position:left}
   }

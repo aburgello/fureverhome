@@ -1,19 +1,19 @@
 /* Hero Section */
 .hero-section {
-  background-image: url('https://cdn.pixabay.com/photo/2018/10/01/09/21/pets-3715733_1280.jpg'); /* Your background image URL */
+  background-image: url('https://cdn.pixabay.com/photo/2018/10/01/09/21/pets-3715733_1280.jpg');
   background-size: cover;
   background-position: center;
-  height: 100vh; /* Full viewport height */
+  height: 80vh; 
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center align the text */
-  justify-content: center; /* Vertically center text */
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
   text-align: center;
   position: relative;
   color: #333;
+  padding: 25px;
 }
 
-/* Darker Background Mask */
 .hero-section::before {
   content: "";
   position: absolute;
@@ -21,24 +21,85 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2); /* Darker mask with higher opacity */
+  background-color: rgba(0, 0, 0, 0.2); 
   z-index: 1;
 }
 
 .hero-section h1, .hero-section p, .hero-section .stylish-button {
   position: relative;
-  z-index: 2; /* Ensure content is above the mask */
+  z-index: 2;
 }
 
 .hero-section h1 {
   font-weight: bold;
-  color: #ffffff; /* Logo color */
+  color: #ffffff;
   font-size: 3.5rem;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 16px #382e25;
 }
 
 .hero-section p {
-  color: #FCFAEE; /* Light cream text for contrast */
+  color: #FCFAEE;
   font-size: 1.2rem;
   margin-bottom: 30px;
+  text-shadow: 2px 2px 4px #382e25;
+}
+
+.stylish-section {
+  padding: 60px 0;
+}
+
+.stylish-section h2 {
+  margin-bottom: 20px;
+  color: #c5a880;
+}
+
+.stylish-section p {
+  color: #333;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  #about-us, #why-adopt {
+    margin-bottom: 40px;
+    margin-top: 40px;
+    margin: 20px;
+
+  }
+  
+  #about-us img, #why-adopt img {
+    margin-top: 20px; 
+  }
+
+  .stylish-section h2 {
+    text-align: center; 
+  }
+}
+.hovereffect {
+  height: 100%;
+  width: 100%;
+  overflow:hidden;
+  position:relative;
+  text-align:center;
+  cursor:default;
+  border-radius: 25px;
+  transition:all .8s ease;
+
+  }
+
+.hovereffect img {
+  margin-right: 10px;
+  border-radius: 25px;
+  display:block;
+  position:relative;
+  transition:all 1s ease;
+}
+
+.hovereffect:hover img {
+  transform: scale(1.2);
 }

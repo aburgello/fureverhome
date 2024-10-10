@@ -1,97 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FureverHome - Adopt a Pet</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <%= stylesheet_link_tag 'main', media: 'all', 'data-turbo-track': 'reload' %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FureverHome - Adopt a Pet</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <%= stylesheet_link_tag 'main', media: 'all', 'data-turbo-track': 'reload' %>
+
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "Furver-home.png" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav me-auto">
-    <li class="nav-item active">
-      <%= link_to "Home", "/", class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Pets", pets_path, class: "nav-link" %>
-    </li>
-  </ul>
-  <ul class="navbar-nav ml-auto">
-    <% if user_signed_in? %>
-      <li class="nav-item">
-        <%= link_to "My Account", edit_user_registration_path, class: "nav-link" %>
-      </li>
-      <% if current_user.role == 'owner' %>
-        <li class="nav-item">
-          <%= link_to 'Create', new_pet_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'My Pets', my_pets_path, class: 'nav-link' %>
-        </li>
-      <% end %>
-      <li class="nav-item">
-        <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "nav-link" %>
-      </li>
-    <% else %>
-      <li class="nav-item">
-        <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
-      </li>
-    <% end %>
-  </ul>
-</div>
-</div>
-</nav>
-
-<div class="container text-center mt-5">
-    <h1>Your Next Best Friend Awaits</h1>
-    <p>
-        Explore our wide variety of pets available for adoption! Each pet is looking for a loving home, and we can't wait to help you find your perfect match.
-    </p>
-</div>
-
-<div class="container text-center mt-5">
-    <h2>Why Adopt?</h2>
-    <p>
-        Adopting a pet saves lives. Our pets come vaccinated, spayed/neutered, and ready for their new homes. When you adopt, you gain a loyal friend for life.
-    </p>
-</div>
-
 <div class="container mt-5">
-    <h2 class="text-center">Meet Our Pets!</h2>
-    <div class="row">
-        <% @pets.each do |pet| %>
-            <div class="col-md-4 mb-4">
-                <%= link_to pet_path(pet), class: 'card-link' do %>
-                    <div class="card">
-                        <img src="<%= pet.image_url.presence || asset_path('default_image.png') %>" class="card-img-top" alt="<%= pet.title %>">
-                        <div class="card-body">
-                            <h5 class="card-title"><%= pet.title %></h5>
-                            <p class="card-text">Age: <%= pet.age || 'Unknown' %> | Breed: <%= pet.breed || 'Unknown' %></p>
-                            <p class="card-text"><%= pet.description %></p>
-                            <%= link_to "Adopt #{pet.title}", pet_path(pet), class: 'btn btn-primary mt-3' %>
-                        </div>
-                    </div>
-                <% end %>
+  <h2 class="text-center" id="index-title">Meet Our Pets!</h2>
+  <div class="row">
+    <% @pets.each do |pet| %>
+      <div class="col-md-4 mb-4">
+        <%= link_to pet_path(pet), class: 'card-link' do %>
+          <div class="card">
+            <%= image_tag pet.display_image_url.presence || asset_path('default_image.png'), class: 'card-img-top', alt: pet.title %>
+            <div class="status-overlay"></div>
+            <div class="card-body">
+              <h5 class="card-title"><%= pet.title %></h5>
+              <p class="card-text">Age: <%= pet.age || 'Unknown' %> | Breed: <%= pet.breed || 'Unknown' %></p>
+              <p class="card-text"><%= pet.description %></p>
+              <p class ="card-text"><%= pet.location %></p>
+              <% if pet.status == 'available' %>
+                <%= link_to "Adopt #{pet.title}", pet_path(pet), class: 'btn btn-primary mt-3' %>
+              <% elsif pet.status == 'pending' %>
+                <button class="btn btn-warning mt-3" disabled>Adoption Ongoing</button>
+              <% elsif pet.status == 'adopted' %>
+                <button class="btn btn-success mt-3" disabled><%= pet.title %> is Adopted</button>
+              <% end %>
             </div>
+          </div>
         <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<!-- Include jQuery, Popper.js, and Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

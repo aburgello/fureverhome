@@ -10,74 +10,47 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "Furver-home.png" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Pets", pets_path, class: "nav-link" %>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "My Account", edit_user_registration_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'nav-link' %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Hero Section -->
 <section class="hero-section">
-    <h1>Welcome to FureverHome!</h1>
-    <p>Find your new best friend today!</p>
-    <a href="<%= pets_path %>" class="stylish-button">See Pets Available for Adoption</a>
+    <h1>Your next best friend awaits!</h1>
+    <p>Each of our pets is looking for a loving home, and we can't wait to help you find your perfect match.</p>
+    <a href="<%= pets_path %>" class="stylish-button">Give a friend a Furever Home</a>
 </section>
 
-<!-- Meet Our Pets Section -->
-<section class="stylish-section text-center" id="about-us">
-    <h2>About Our Pets</h2>
-    <p>
-        At FureverHome, every pet has a heart full of love just waiting to be shared!
-        From curious kittens to loyal dogs, each of our furry friends has their own unique
-        personality and adorable quirks. We’re here to help you find your perfect companion.
-    </p>
-    <a href="/pets" class="meet-our-pets-button">Meet Our Pets</a>
+<section class="stylish-section" id="about-us">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-left">
+                <h2>About Our Pets</h2>
+                <p>
+                    At FureverHome, every pet has a heart full of love just waiting to be shared!
+                    From curious kittens to loyal dogs, each of our furry friends has their own unique
+                    personality and adorable quirks. We’re here to help you find your perfect companion.
+                </p>
+            </div>
+            <div class="col-md-6 hovereffect">
+                <img src="https://images.wagwalkingweb.com/media/daily_wag/blog_articles/hero/1651153661.2751184/a-day-in-the-life-of-an-animal-shelter-volunteer.png" alt="Our Pets" class="img-fluid">
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- Why Adopt Section -->
-<section class="stylish-section text-center" id="why-adopt">
-    <h2>Why Adopt?</h2>
-    <p>
-        Adopting a pet isn’t just about giving them a new home; it’s about giving them a second chance at a happy, fulfilling life.
-        When you adopt, you’re saving a life and opening your heart to an endless source of love and joy. From reducing the number of
-        homeless animals to gaining a loyal companion, the impact of adoption is truly life-changing for both you and your new furry friend.
-    </p>
-
+<section class="stylish-section" id="why-adopt">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 hovereffect">
+                <img src="https://prodogsdirect.org.uk/wp-content/uploads/2017/08/Happy-puppy-homepage-700x467.jpg" alt="Why Adopt" class="img-fluid">
+            </div>
+            <div class="col-md-6 text-left mt-4">
+                <h2>Why Adopt?</h2>
+                <p>
+                    Adopting a pet isn’t just about giving them a new home; it’s about giving them a second chance at a happy, fulfilling life.
+                    When you adopt, you’re saving a life and opening your heart to an endless source of love and joy. From reducing the number of
+                    homeless animals to gaining a loyal companion, the impact of adoption is truly life-changing for both you and your new furry friend.
+                </p>
+            </div>
+        </div>
+    </div>
 </section>
 
 </body>
-
-
 </html>
