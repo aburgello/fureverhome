@@ -15,35 +15,56 @@
 
 .stylish-button:hover, .meet-our-pets-button:hover {
   background-color: #A5B68D;
-  cursor: url(http://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
+  cursor: url(https://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
 }
 .meet-our-pets-button {
   margin-top: 20px;
   color: white !important;
 }
 
+.adopt-button{
+  background-color: #FFA756; 
+  border: none;
+  font-family: 'Montserrat', sans-serif; 
+  transition: background-color 0.3s ease;
+  letter-spacing: 0.5px;
+  animation: wiggle 2s ease infinite;
+  
+}
+
+.adopt-button:hover{
+  -webkit-mask:linear-gradient(-60deg,#464646 50%,rgba(48, 48, 48, 0.333),#a8a8a8 70%) right/360% 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  animation: shimmer ease-out 1.3s infinite;
+  background-color: #f19e5b;
+
+}
 
 @keyframes wiggle {
   0%, 7% {
     transform: rotateZ(0);
   }
   15% {
-    transform: rotateZ(-15deg);
+    transform: rotateZ(-7deg);
   }
   20% {
-    transform: rotateZ(10deg);
+    transform: rotateZ(5deg);
   }
   25% {
-    transform: rotateZ(-10deg);
+    transform: rotateZ(-5deg);
   }
   30% {
-    transform: rotateZ(6deg);
+    transform: rotateZ(3deg);
   }
   35% {
-    transform: rotateZ(-4deg);
+    transform: rotateZ(-2deg);
   }
   40%, 100% {
     transform: rotateZ(0);
   }
 }
 
+@keyframes shimmer {
+  100% {-webkit-mask-position:left}
+}
