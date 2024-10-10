@@ -24,7 +24,7 @@
     <% if user_signed_in? %>
       <% if @pet.user == current_user %>
         <%= link_to 'Edit', edit_pet_path(@pet), class: 'btn btn-primary', style: "background-color: #c5a880; border: none;" %>
-      <% else %>
+      <% elsif @pet.status == 'available' %>
         <%= link_to 'Adopt', new_pet_adoption_path(pet_id: @pet.id), class: 'btn btn-primary', style: "background-color: #c5a880; border: none;" %>
       <% end %>
       <%= link_to 'Back', pets_path, class: 'btn btn-secondary' %>
