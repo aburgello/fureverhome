@@ -1,34 +1,22 @@
 Rails.application.routes.draw do
-  get "adoptions/new"
-  get "adoptions/create"
-
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # Health check route
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Render dynamic PWA files from app/views/pwa/*
+  # PWA routes
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-  # Defines the root path route ("/")
-  # root "posts#index"
-
+  # Root and landing page routes
   get 'landing', to: 'landing#index'
   root 'landing#index'
 
-
-  resources :pets
-
-  get '/my_pets', to: 'pets#my_pets', as: 'my_pets'
-
+  # Pet and adoption resources
   resources :pets do
     collection do
       get :my_pets
     end
-
     resources :adoptions, only: [:new, :create]
   end
 end
