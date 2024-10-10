@@ -29,6 +29,11 @@
   </div>
 
   <div class="mb-3">
+    <%= f.label :location, class: 'form-label' %>
+    <%= f.text_field :location, class: 'form-control', placeholder: 'Enter Location' %>
+  </div>
+
+  <div class="mb-3">
     <%= f.label :image, "Upload Image", class: 'form-label' %>
     <%= f.file_field :image, class: 'form-control' %>
   </div>

@@ -1,6 +1,7 @@
 class Pet < ApplicationRecord
   belongs_to :user
   has_one_attached :image
+  validates :location, presence: true
 
   def display_image_url
     if image.attached?

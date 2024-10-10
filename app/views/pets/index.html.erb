@@ -23,6 +23,7 @@
               <h5 class="card-title"><%= pet.title %></h5>
               <p class="card-text">Age: <%= pet.age || 'Unknown' %> | Breed: <%= pet.breed || 'Unknown' %></p>
               <p class="card-text"><%= pet.description %></p>
+              <p class ="card-text"><%= pet.location %></p>
               <% if pet.status == 'available' %>
                 <%= link_to "Adopt #{pet.title}", pet_path(pet), class: 'btn btn-primary mt-3' %>
               <% elsif pet.status == 'pending' %>

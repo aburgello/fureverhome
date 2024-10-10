@@ -17,7 +17,7 @@ class PetsController < ApplicationController
   def create
     @pet = current_user.pets.build(pet_params)
     if @pet.save
-      redirect_to my_pets_path, notice: 'Pet listing created successfully.'
+      redirect_to pets_path, notice: 'Pet listing created successfully.'
     else
       render :new
     end
@@ -52,7 +52,7 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:title, :description, :status, :breed, :age, :image_url, :image)
+    params.require(:pet).permit(:title, :description, :status, :breed, :age, :image_url, :image, :location)
   end
 
   def authorise_owner!
