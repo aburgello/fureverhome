@@ -21,19 +21,19 @@
 }
 
 .dropdown-menu {
-  background-color: white; /* Background color */
-  border-radius: 0.5rem; /* Rounded corners */
-  position: absolute; /* Positioning for the dropdown */
-  left: auto; /* Align left automatically */
-  right: 0; /* Align right */
-  max-width: auto; /* Auto width */
-  overflow: hidden; /* Prevent content overflow */
-  height: 0; /* Start hidden */
-  opacity: 0; /* Start invisible */
-  display: none; /* Hide by default */
-  transition: opacity 0.3s ease; /* Smooth opacity transition */
+  background-color: white;
+  border-radius: 0.5rem;
+  position: absolute;
+  left: auto;
+  right: 0;
+  max-width: auto;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.3s ease;
 }
 
 .dropdown-menu.show {
-  display: block; /* Show when active */
+  display: block;
 }
