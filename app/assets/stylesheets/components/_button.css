@@ -45,22 +45,25 @@
     transform: rotateZ(0);
   }
   15% {
-    transform: rotateZ(-15deg);
+    transform: rotateZ(-7deg);
   }
   20% {
-    transform: rotateZ(10deg);
+    transform: rotateZ(5deg);
   }
   25% {
-    transform: rotateZ(-10deg);
+    transform: rotateZ(-5deg);
   }
   30% {
-    transform: rotateZ(6deg);
+    transform: rotateZ(3deg);
   }
   35% {
-    transform: rotateZ(-4deg);
+    transform: rotateZ(-2deg);
   }
   40%, 100% {
     transform: rotateZ(0);
   }
 }
 
+@keyframes shimmer {
+  100% {-webkit-mask-position:left}
+}
