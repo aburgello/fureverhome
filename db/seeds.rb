@@ -6,13 +6,21 @@ pet_service = DogApiService
 
 statuses = ['available', 'adopted', 'pending']
 
+creature_classes = [
+  Faker::Creature::Dog,
+  Faker::Creature::Cat,
+  Faker::Creature::Horse,
+  Faker::Creature::Bird
+]
+
 12.times do |i|
   pets = pet_service.call
 
   pets.each do |pet|
     next if pet[:name] == 'Unknown' || pet[:description] == 'Unknown temperament'
 
-    random_name = Faker::Creature::Dog.name
+    random_creature_class = creature_classes.sample
+    random_name = random_creature_class.name
     random_status = statuses.sample
 
     existing_pet = Pet.find_or_create_by(
