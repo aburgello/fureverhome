@@ -17,7 +17,7 @@ uk_cities = [
   'Newcastle', 'Hull', 'Plymouth', 'Stoke-on-Trent', 'Wolverhampton'
 ]
 
-12.times do |i|
+30.times do |i|
   pets = pet_service.call
 
   pets.each do |pet|
