@@ -1,8 +1,4 @@
 class Adoption < ApplicationRecord
-  belongs_to :user
-  belongs_to :pet
-
-  has_many :messages, dependent: :destroy
 
 
   validates :adopter_name, presence: true
