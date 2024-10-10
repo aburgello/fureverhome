@@ -11,3 +11,29 @@
 .navbar-lewagon .navbar-brand img {
   width: 250px;
 }
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.dropdown-menu {
+  background-color: white; /* Background color */
+  border-radius: 0.5rem; /* Rounded corners */
+  position: absolute; /* Positioning for the dropdown */
+  left: auto; /* Align left automatically */
+  right: 0; /* Align right */
+  max-width: auto; /* Auto width */
+  overflow: hidden; /* Prevent content overflow */
+  height: 0; /* Start hidden */
+  opacity: 0; /* Start invisible */
+  display: none; /* Hide by default */
+  transition: opacity 0.3s ease; /* Smooth opacity transition */
+}
+
+.dropdown-menu.show {
+  display: block; /* Show when active */
+}
