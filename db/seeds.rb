@@ -5,6 +5,7 @@ puts "Seeding Pets!"
 
 pet_service = DogApiService
 
+statuses = ['available', 'adopted', 'pending']
 
 12.times do |i|
   pets = pet_service.call
@@ -13,13 +14,14 @@ pet_service = DogApiService
     next if pet[:name] == 'Unknown' || pet[:description] == 'Unknown temperament'
 
     random_name = Faker::Creature::Dog.name
+    random_status = statuses.sample
 
     Pet.create(
       title: random_name,
       description: pet[:description] || "A wonderful pet.",
       breed: pet[:name],
       age: rand(1..10),
-      status: 'available',
+      status: random_status,
       image_url: pet[:image_url]
     )
 
