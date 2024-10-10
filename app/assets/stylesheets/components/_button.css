@@ -37,6 +37,7 @@
   background-repeat: no-repeat;
   overflow: hidden;
   animation: shimmer ease-out 1.3s infinite;
+  background-color: #f19e5b;
 
 }
 
