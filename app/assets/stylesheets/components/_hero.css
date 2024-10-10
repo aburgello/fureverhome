@@ -1,17 +1,26 @@
 /* Hero Section */
 .hero-section {
-  background-image: url('https://cdn.pixabay.com/photo/2018/10/01/09/21/pets-3715733_1280.jpg');
+  background-image: url('/assets/Hero.jpg');
   background-size: cover;
   background-position: center;
-  height: 80vh; 
+  background-repeat: no-repeat;
+  width: 100%;
+  height: calc(100vw * 9 / 16); /* Maintain 16:9 aspect ratio */
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  color: #333;
+  align-items: center;
+  justify-content: flex-start; /* Ensure content starts from the left */
   padding: 25px;
+  font-family: 'Roboto Slab', serif; /* Use Roboto Slab font */
+  color: #323440;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 45%; /* Constrain content to the right half */
+  text-align: left; /* Left-align the text */
+  margin-left: auto; /* Push content towards the right */
+  padding-right: 5%; /* Add spacing from the right side */
+  z-index: 2; /* Ensure content is above the background overlay */
 }
 
 .hero-section::before {
@@ -21,85 +30,39 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2); 
+  background-color: transparent; /* No background shadow */
   z-index: 1;
 }
 
-.hero-section h1, .hero-section p, .hero-section .stylish-button {
+.hero-section h1, .hero-section p, .stylish-button {
+  font-weight: 400;
   position: relative;
-  z-index: 2;
 }
 
 .hero-section h1 {
-  font-weight: bold;
-  color: #ffffff;
+  font-weight: 700;
   font-size: 3.5rem;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 16px #382e25;
 }
 
 .hero-section p {
-  color: #FCFAEE;
+  font-family: 'Montserrat', sans-serif; /* Montserrat font */
   font-size: 1.2rem;
+  line-height: 1.8;
+  color: #323440;
   margin-bottom: 30px;
-  text-shadow: 2px 2px 4px #382e25;
-}
-
-.stylish-section {
-  padding: 60px 0;
-}
-
-.stylish-section h2 {
-  margin-bottom: 20px;
-  color: #c5a880;
-}
-
-.stylish-section p {
-  color: #333;
-}
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+  padding-right: 20px;
 }
 
 @media (max-width: 768px) {
-  #about-us, #why-adopt {
-    margin-bottom: 40px;
-    margin-top: 40px;
-    margin: 20px;
-
-  }
-  
-  #about-us img, #why-adopt img {
-    margin-top: 20px; 
+  .hero-content {
+    max-width: 100%; /* Full width on mobile */
+    margin-left: 0; /* Center content */
+    padding-right: 0;
+    text-align: center; /* Center-align text on mobile */
   }
 
-  .stylish-section h2 {
-    text-align: center; 
+  .hero-section {
+    height: 50vh; /* Adjust height for mobile */
   }
-}
-.hovereffect {
-  height: 100%;
-  width: 100%;
-  overflow:hidden;
-  position:relative;
-  text-align:center;
-  cursor:default;
-  border-radius: 25px;
-  transition:all .8s ease;
-
-  }
-
-.hovereffect img {
-  margin-right: 10px;
-  border-radius: 25px;
-  display:block;
-  position:relative;
-  transition:all 1s ease;
-}
-
-.hovereffect:hover img {
-  transform: scale(1.2);
 }
