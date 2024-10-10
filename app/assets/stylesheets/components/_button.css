@@ -1,11 +1,11 @@
 .stylish-button, .meet-our-pets-button {
-  background-color: #FFA756; 
+  background-color: #323440;
   color: white !important;
   padding: 12px 25px;
   border: none;
   border-radius: 30px;
-  font-size: 1.2rem; 
-  font-family: 'Montserrat', sans-serif; 
+  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   transition: background-color 0.3s ease;
   letter-spacing: 0.5px;
@@ -14,7 +14,7 @@
 }
 
 .stylish-button:hover, .meet-our-pets-button:hover {
-  background-color: #A5B68D;
+  background-color: #2c2e39;
   cursor: url(https://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
 }
 .meet-our-pets-button {
@@ -23,13 +23,13 @@
 }
 
 .adopt-button{
-  background-color: #FFA756; 
+  background-color: #FFA756;
   border: none;
-  font-family: 'Montserrat', sans-serif; 
+  font-family: 'Montserrat', sans-serif;
   transition: background-color 0.3s ease;
   letter-spacing: 0.5px;
   animation: wiggle 2s ease infinite;
-  
+
 }
 
 .adopt-button:hover{
