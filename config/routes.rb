@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "adoptions/new"
+  get "adoptions/create"
 
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -26,5 +28,7 @@ Rails.application.routes.draw do
     collection do
       get :my_pets
     end
+
+    resources :adoptions, only: [:new, :create]
   end
 end

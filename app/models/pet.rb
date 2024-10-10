@@ -1,4 +1,5 @@
 class Pet < ApplicationRecord
+  belongs_to :user
   has_one_attached :image
 
   def display_image_url
