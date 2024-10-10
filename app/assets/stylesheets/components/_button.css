@@ -22,6 +22,23 @@
   color: white !important;
 }
 
+.adopt-button{
+  background-color: #FFA756; 
+  border: none;
+  font-family: 'Montserrat', sans-serif; 
+  transition: background-color 0.3s ease;
+  letter-spacing: 0.5px;
+  animation: wiggle 2s ease infinite;
+  
+}
+
+.adopt-button:hover{
+  -webkit-mask:linear-gradient(-60deg,#464646 50%,rgba(48, 48, 48, 0.333),#a8a8a8 70%) right/360% 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  animation: shimmer ease-out 1.3s infinite;
+
+}
 
 @keyframes wiggle {
   0%, 7% {
