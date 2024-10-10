@@ -9,8 +9,8 @@
               <h5 class="card-title">Request for <%= adoption.pet.title %></h5>
               <p class="card-text"><strong>Email:</strong> <%= adoption.adopter_email %></p>
               <p class="card-text"><strong>Message:</strong> <%= adoption.message %></p>
-              <p class="card-text"><strong>Status:</strong> <%= adoption.status %></p>
               <div class="mt-auto d-flex justify-content-between">
+                <%= link_to 'Message', adoption_messages_path(adoption), class: 'btn btn-primary' %>
                 <%= link_to 'Delete', pet_adoption_path(adoption.pet, adoption), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
               </div>
             </div>
@@ -35,8 +35,8 @@
                   <div id="<%= dom_id(adoption) %>" class="mb-3">
                     <p class="card-text"><strong>Email:</strong> <%= adoption.adopter_email %></p>
                     <p class="card-text"><strong>Message:</strong> <%= adoption.message %></p>
-                    <p class="card-text"><strong>Status:</strong> <%= adoption.status %></p>
                     <div class="mt-auto d-flex justify-content-between">
+                      <%= link_to 'Message', adoption_messages_path(adoption), class: 'btn btn-primary' %>
                       <%= link_to 'Delete', pet_adoption_path(adoption.pet, adoption), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
                     </div>
                     <hr>
@@ -46,7 +46,7 @@
             </div>
           <% end %>
         <% else %>
-          <p>No requests found for your pets.</p>
+          <p>No requests found.</p>
         <% end %>
       </div>
     <% end %>

@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   end
   resources :requests, only: [:index, :create]
 
-  resources :adoptions
+  resources :adoptions do
+    resources :messages, only: [:index, :create]
+  end
 end

@@ -5,7 +5,7 @@
     <% @messages.each do |message| %>
       <div class="message">
         <div class="message-header">
-          <strong><%= message.user.name %>:</strong>
+          <strong><%= message.user.email %>:</strong>
           <small class="text-muted"><%= message.created_at.strftime("%B %d, %Y %H:%M") %></small>
         </div>
         <p><%= message.content %></p>
@@ -29,5 +29,3 @@
     justify-content: space-between;
   }
 </style>
-
-
