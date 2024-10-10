@@ -47,7 +47,7 @@ document.addEventListener('turbo:load', function() {
                 height: '0',
                 opacity: '0'
             }, 100, function() {
-                $(this).css('display', 'none'); // Hide after animation
+                $(this).css('display', 'none'); 
             });
         }
     });

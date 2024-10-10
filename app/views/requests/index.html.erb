@@ -1,0 +1,58 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>My Requests</h1>
+      <% if @my_requests.present? %>
+        <% @my_requests.each do |adoption| %>
+          <div id="<%= dom_id(adoption) %>" class="card mb-3">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Request for <%= adoption.pet.title %></h5>
+              <p class="card-text"><strong>Name:</strong> <%= adoption.adopter_name %></p>
+              <p class="card-text"><strong>Email:</strong> <%= adoption.adopter_email %></p>
+              <p class="card-text"><strong>Message:</strong> <%= adoption.message %></p>
+              <p class="card-text"><strong>Status:</strong> <%= adoption.status %></p>
+              <div class="mt-auto d-flex justify-content-between">
+                <%= link_to 'Message', adoption_messages_path(adoption), class: 'btn btn-primary' %>
+                <%= link_to 'Delete', pet_adoption_path(adoption.pet, adoption), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <p>No requests found.</p>
+      <% end %>
+    </div>
+
+    <% if current_user.role == 'owner' %>
+      <div class="col-md-12">
+        <h1>Requests for My Pets</h1>
+        <% if @requests_for_my_pets.present? %>
+          <% @requests_for_my_pets.each do |pet, adoptions| %>
+            <div class="card mb-3">
+              <div class="card-header">
+                <h5 class="card-title">Requests for <%= pet.title %></h5>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <% adoptions.each do |adoption| %>
+                  <div id="<%= dom_id(adoption) %>" class="mb-3">
+                    <p class="card-text"><strong>Name:</strong> <%= adoption.adopter_name %></p>
+                    <p class="card-text"><strong>Email:</strong> <%= adoption.adopter_email %></p>
+                    <p class="card-text"><strong>Message:</strong> <%= adoption.message %></p>
+                    <p class="card-text"><strong>Status:</strong> <%= adoption.status %></p>
+                    <div class="mt-auto d-flex justify-content-between">
+                      <%= link_to 'Message', adoption_messages_path(adoption), class: 'btn btn-primary' %>
+                      <%= link_to 'Delete', pet_adoption_path(adoption.pet, adoption), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+                    </div>
+                    <hr>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <p>No requests found for your pets.</p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

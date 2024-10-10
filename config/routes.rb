@@ -1,22 +1,24 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  # Health check route
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # PWA routes
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-  # Root and landing page routes
   get 'landing', to: 'landing#index'
   root 'landing#index'
 
-  # My Pets route outside the resources block
   get '/my_pets', to: 'pets#my_pets', as: 'my_pets'
+  get 'requests', to: 'requests#index'
 
-  # Pet and adoption resources
   resources :pets do
-    resources :adoptions, only: [:new, :create]
+    resources :adoptions, only: [:new, :create, :destroy]
   end
+  resources :requests, only: [:index]
+
+  resources :adoptions do
+    resources :messages, only: [:index, :create]
+  end
+
 end
