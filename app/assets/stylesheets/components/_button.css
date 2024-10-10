@@ -15,7 +15,7 @@
 
 .stylish-button:hover, .meet-our-pets-button:hover {
   background-color: #A5B68D;
-  cursor: url(http://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
+  cursor: url(https://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
 }
 .meet-our-pets-button {
   margin-top: 20px;
