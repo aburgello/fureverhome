@@ -22,7 +22,8 @@ statuses = ['available', 'adopted', 'pending']
       breed: pet[:name],
       age: rand(1..10),
       status: random_status,
-      image_url: pet[:image_url]
+      image_url: pet[:image_url],
+      user_id: 1
     )
 
     puts "Random Name: #{random_name}"
