@@ -1,6 +1,5 @@
 require 'faker'
 
-Pet.destroy_all
 puts "Seeding Pets!"
 
 pet_service = DogApiService
@@ -16,15 +15,17 @@ statuses = ['available', 'adopted', 'pending']
     random_name = Faker::Creature::Dog.name
     random_status = statuses.sample
 
-    Pet.create(
+    # Check for existing records before creating a new one
+    existing_pet = Pet.find_or_create_by(
       title: random_name,
-      description: pet[:description] || "A wonderful pet.",
       breed: pet[:name],
       age: rand(1..10),
-      status: random_status,
-      image_url: pet[:image_url],
       user_id: 1
-    )
+    ) do |p|
+      p.description = pet[:description] || "A wonderful pet."
+      p.status = random_status
+      p.image_url = pet[:image_url]
+    end
 
     puts "Random Name: #{random_name}"
     puts "Breed (from API): #{pet[:name]}"
