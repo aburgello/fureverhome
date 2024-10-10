@@ -15,7 +15,6 @@ statuses = ['available', 'adopted', 'pending']
     random_name = Faker::Creature::Dog.name
     random_status = statuses.sample
 
-    # Check for existing records before creating a new one
     existing_pet = Pet.find_or_create_by(
       title: random_name,
       breed: pet[:name],
