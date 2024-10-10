@@ -1,31 +1,57 @@
-<div class="container mt-5">
-  <h1>Messages About <%= @adoption.pet.title %></h1>
-
-  <div class="messages-box" id="messages-box" style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<div class="container mt-5 pb-4 rounded mb-3 pet-header">
+  <h1 class="text-center my-4">Messages About <%= @adoption.pet.title %></h1>
+<div class="card-msg shadow-sm mb-4 p-3">
+  <div class="messages-box mb-4 p-3 border rounded" id="messages-box" style="max-height: 360px; overflow-y: auto; background-color: white">
     <% @messages.each do |message| %>
-      <div class="message">
-        <div class="message-header">
+      <div class="message mb-3 p-2 border-bottom">
+        <div class="message-header d-flex justify-content-between">
           <strong><%= message.user.email %>:</strong>
           <small class="text-muted"><%= message.created_at.strftime("%B %d, %Y %H:%M") %></small>
         </div>
-        <p><%= message.content %></p>
+        <p class="mb-0"><%= message.content %></p>
       </div>
     <% end %>
   </div>
 
-  <%= form_with model: [@adoption, @message], local: true, id: 'message_form' do |f| %>
+  <%= form_with model: [@adoption, @message], local: true, class: 'mb-3' do |f| %>
     <div class="mb-3">
-      <%= f.label :content, "New Message" %>
+      <%= f.label :content, "New Message", class: 'form-label' %>
       <%= f.text_area :content, class: 'form-control', rows: 3, id: 'message_content' %>
     </div>
-    <%= f.submit "Send Message", class: 'btn btn-primary' %>
+    <div class="d-flex justify-content-between">
+      <%= f.submit "Send Message", class: 'btn btn-primary btn-lg' %>
+      <%= link_to 'Back to Requests', requests_path, class: 'btn btn-secondary btn-lg' %>
+    </div>
   <% end %>
-  <%= link_to 'Back to Requests', requests_path, class: 'btn btn-secondary mb-3' %>
 </div>
-
+</div>
 <style>
+
+  .card-msg {
+    border: 2px solid #d4d2bf;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 14px;
+    background-color: #f9f7f3;
+  }
+
+.card-msg:hover {
+  border-color: rgb(228, 156, 62);
+  transition: all 0.3s ease;  
+}
   .message-header {
     display: flex;
     justify-content: space-between;
+    font-size: 1rem;
+    color: rgb(68, 57, 41);
+  }
+  
+  .message-box {
+    background-color: #f8f9fa; 
+    border-radius: 14px;
+    
+  }
+
+  .message {
+    border-radius: 4px;
   }
 </style>
