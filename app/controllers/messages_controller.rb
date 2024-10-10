@@ -1,4 +1,4 @@
-lass MessagesController < ApplicationController
+class MessagesController < ApplicationController
   before_action :set_adoption
 
   def index
