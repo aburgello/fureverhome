@@ -37,7 +37,7 @@ class AdoptionsController < ApplicationController
         user: current_user,
         content: "Congratulations! #{@pet.title} is now yours."
       )
-      load_requests  # Ensure that the requests are reloaded after accepting
+      load_requests  
       redirect_to my_pets_path, notice: 'Adoption request accepted.'
     else
       redirect_to requests_path, alert: 'Failed to accept the adoption request.'

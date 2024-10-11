@@ -16,7 +16,6 @@
 
 <div class="container">
     <div class="row">
-    <!-- Card 1: Age, Breed, Size, Gender, Location -->
       <div class="col-md-4">
         <div class="card_details">
           <div class="card-body">
@@ -28,18 +27,16 @@
         </div>
       </div>
 
-      <!-- Card 2: Personality -->
       <div class="col-md-4">
         <div class="card_details">
           <div class="card-body">
             <h5 class="card-title">Personality</h5>
             <p><strong></strong> <%= @pet.description %></p>
-            <%# <p class="card-text"><%= @pet.personality %></p>
+            <p class="card-text"><%= @pet.personality %></p>
           </div>
         </div>
       </div>
 
-      <!-- Card 3: Health Info -->
       <div class="col-md-4">
         <div class="card_details">
           <div class="card-body">
@@ -50,7 +47,6 @@
       </div>
     </div>
 </div>
-  <!-- Buttons: Edit, Adopt, Back -->
 <div class="container mt-2 mb-5 d-flex justify-content-between">
   <% if user_signed_in? %>
     <% if @pet.user == current_user %>
