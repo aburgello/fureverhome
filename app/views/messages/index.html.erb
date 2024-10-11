@@ -6,7 +6,7 @@
         <% @messages.each do |message| %>
           <div class="message mb-3 p-2 border-bottom">
             <div class="message-header d-flex justify-content-between">
-              <strong><%= message.user.email %>:</strong>
+              <strong><%= message.user.name %>:</strong>
               <small class="text-muted"><%= message.created_at.strftime("%B %d, %Y %H:%M") %></small>
             </div>
             <p class="mb-0"><%= message.content %></p>
@@ -36,4 +36,3 @@
     <% end %>
   </div>
 </div>
-
