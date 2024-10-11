@@ -4,11 +4,12 @@
   }
 
   .pet-header h1 {
-    font-family: 'Roboto Slab', serif;
-    color: #333;
-    font-size: 3rem;
-    text-align: left;
-    padding: 20px;
+    font-family: 'Roboto Slab', serif; /* Same font as the hero */
+    font-weight: 700; /* Bold font weight */
+    font-size: 2.5rem; /* Same font size as the hero */
+    color: #323440; /* Use the same color as hero text */
+    margin-bottom: 20px;
+    text-transform: none; /* Ensure
     /* font-family: 'Bangers'; */
   }
 

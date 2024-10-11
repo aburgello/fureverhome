@@ -10,26 +10,31 @@
 </head>
 <body>
 
+<section class="container mt-5">
+  <div class="container">
+    <h2 class="text-left">Meet Our Pets!</h2>
+  </div>
+</section>
+
 <div class="container mt-5">
-  <h2 class="text-center" id="index-title">Meet Our Pets!</h2>
   <div class="row">
     <% @pets.each do |pet| %>
       <div class="col-md-4 mb-4">
         <%= link_to pet_path(pet), class: 'card-link' do %>
           <div class="card">
             <%= image_tag pet.display_image_url.presence || asset_path('default_image.png'), class: 'card-img-top', alt: pet.title %>
-            <div class="status-overlay"></div>
             <div class="card-body">
               <h5 class="card-title"><%= pet.title %></h5>
               <p class="card-text">Age: <%= pet.age || 'Unknown' %> | Breed: <%= pet.breed || 'Unknown' %></p>
               <p class="card-text"><%= pet.description %></p>
-              <p class ="card-text"><%= pet.location %></p>
+              <p class="card-text"><%= pet.location %></p>
+
               <% if pet.status == 'available' %>
-                <%= link_to "Adopt #{pet.title}", pet_path(pet), class: 'btn btn-primary mt-3' %>
+                <%= link_to "Adopt #{pet.title}", pet_path(pet), class: 'furever-button mt-3' %>
               <% elsif pet.status == 'pending' %>
-                <button class="btn btn-warning mt-3" disabled>Adoption Ongoing</button>
+                <button class="furever-button furever-button-ongoing mt-3" disabled>Adoption Ongoing</button>
               <% elsif pet.status == 'adopted' %>
-                <button class="btn btn-success mt-3" disabled><%= pet.title %> is Adopted</button>
+                <button class="furever-button furever-button-adopted mt-3" disabled><%= pet.title %> is Adopted</button>
               <% end %>
             </div>
           </div>
@@ -38,6 +43,8 @@
     <% end %>
   </div>
 </div>
+
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

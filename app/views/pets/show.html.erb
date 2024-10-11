@@ -1,8 +1,10 @@
 <body>
 
-<div class="pet-header m-3">
-  <h1> <span class="sparkles"><span style="font-family: 'Concert One', sans-serif;">Meet <%= @pet.title %></span>!</span></h1>
-</div>
+<section class="mt-5">
+  <div class="container">
+    <h2 class="text-left"><span class="sparkles">Meet <%= @pet.title %>!</span></h2>
+  </div>
+</section>
 
 <div class="container text-center">
   <% if @pet.image_url.present? %>
