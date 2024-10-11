@@ -1,11 +1,11 @@
 /* Hero Section */
 .hero-section {
-  background-image: url('<%= asset_path('Hero.jpg') %>');
+  background-image: url('<%= asset_path('hero_dog.jpg') %>');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: calc(100vw * 9 / 16); /* Maintain 16:9 aspect ratio */
+  height: calc(100vw * 7 / 16); /* Maintain 16:9 aspect ratio */
   display: flex;
   align-items: center;
   justify-content: flex-start; /* Ensure content starts from the left */
@@ -34,14 +34,14 @@
   z-index: 1;
 }
 
-.hero-section h1, .hero-section p, .stylish-button {
+.hero-section h1, .hero-section p, .furever-button {
   font-weight: 400;
   position: relative;
 }
 
 .hero-section h1 {
   font-weight: 700;
-  font-size: 3.5rem;
+  font-size: 3.5rem; /* Large size for larger screens */
   margin-bottom: 20px;
 }
 
@@ -64,5 +64,36 @@
 
   .hero-section {
     height: 50vh; /* Adjust height for mobile */
+    justify-content: center; /* Center content on mobile */
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem; /* Reduce font size for smaller screens */
+  }
+
+  .hero-section p {
+    font-size: 1rem; /* Adjust paragraph size */
+    padding-right: 0;
+  }
+
+  .furever-button {
+    font-size: 1rem; /* Smaller button text on mobile */
+    padding: 8px 15px; /* Adjust button padding */
+  }
+}
+
+/* Extra Small Screen Adjustments */
+@media (max-width: 576px) {
+  .hero-section h1 {
+    font-size: 2rem; /* Further reduce font size */
+  }
+
+  .hero-section p {
+    font-size: 0.9rem; /* Further adjust paragraph size */
+  }
+
+  .furever-button {
+    font-size: 0.9rem; /* Smaller button text */
+    padding: 6px 12px; /* Adjust button padding */
   }
 }

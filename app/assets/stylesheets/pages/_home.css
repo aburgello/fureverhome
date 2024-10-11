@@ -3,6 +3,18 @@ body {
   background-color: white; /* Light beige for the overall background */
   color: #333; /* Dark grey text for general readability */
   font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  background: linear-gradient(to bottom,white);
 }
 
 .home-page {
@@ -16,7 +28,8 @@ body {
   } /* General Styles for Cuter Look */
 }
 
-/* General Stylish Section */
+
+/* General furever Section */
 .section {
   margin-bottom: 0; /* Remove any bottom margin */
   padding-bottom: 40px; /* Adjust padding to ensure space between content and bottom */
@@ -29,7 +42,7 @@ body {
   text-align: center;
 }
 
-/* Stylish Section - Applying Gagalin to h1 */
+/* furever Section - Applying Gagalin to h1 */
 section h2 {
   font-family: 'Roboto Slab', serif; /* Same font as the hero */
   font-weight: 700; /* Bold font weight */
@@ -59,31 +72,8 @@ section h2 {
   transform: scale(1.05); /* Slight hover zoom effect */
 }
 
-/* Button Styles */
-.button, .meet-our-pets-button {
-  background-color: #FFA756; /* Logo color for buttons */
-  color: white !important; /* Force white text color with important flag */
-  padding: 12px 25px;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.2rem; /* Normal, readable font */
-  font-family: 'Montserrat', sans-serif; /* Use Montserrat or your base font */
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-  letter-spacing: 0.5px;
-  text-decoration: none; /* Prevent underline */
-}
-
-/* Hover Effect for Buttons */
-.button:hover, .meet-our-pets-button:hover {
-  background-color: #A5B68D; /* Green shade on hover */
-  cursor: pointer;
-  text-decoration: none; /* Prevent underline on hover */
-}
-
-/* Specific Styles for Meet Our Pets Button */
-.meet-our-pets-button {
-  margin-top: 20px; /* Add spacing if needed */
-  color: white !important; /* Force white text specifically for this button */
-  text-decoration: none; /* Prevent underline */
+/* Why Adopt Section */
+#why-adopt {
+  background-color: fbfbfb; /* Light gray background for Why Adopt section */
+  padding: 50px 0; /* Add padding for spacing */
 }

@@ -8,20 +8,8 @@
 @import url('components/_showpage.css');
 @import url('pages/_home.css');
 
-html, body {
-    height: 100%;
-    margin: 0;
-  }
 
-  body {
-    display: flex;
-    flex-direction: column;
-  }
 
-  main {
-    flex: 1;
-    background: linear-gradient(to bottom, #f0e4d4, #fffdfb);
-  }
 
   .footer {
     padding: 25px 10px;
@@ -49,7 +37,7 @@ html, body {
   font-family: 'Bangers';
   font-size: 3rem;
   color: #333;
-}  
+}
 
 
 .btn {
@@ -59,4 +47,3 @@ html, body {
 .card-link:hover{
     cursor: url(https://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
 }
-

@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   /* background: white; */
-  background-color: #FFFFFF; /* White navbar */
+  background-color: #e5eeff; /* light blue navbar */
   color: #333; /* Dark grey for text */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for separation */
 }

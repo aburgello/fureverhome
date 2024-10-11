@@ -4,6 +4,7 @@ class PetsController < ApplicationController
 
   def index
     @pets = Pet.all
+    @featured_pets = Pet.where(status: 'available').limit(4)
   end
 
   def show
