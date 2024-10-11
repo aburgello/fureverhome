@@ -48,7 +48,7 @@
     padding: 10px;             /* Add padding for spacing */
     background-color: white;   /* Add a white background around image */
     border: 1px solid #ccc;    /* Thin gray border */
-    max-height: 800px;         /* Set a maximum height for larger images */
+    max-height: 550px;         /* Set a maximum height for larger images */
 }
 
   .pet-details {
