@@ -1,7 +1,7 @@
 <body>
 
 <div class="pet-header m-3">
-  <h1>Meet <span class="sparkles"><%= @pet.title %></span>!</h1>
+  <h1> <span class="sparkles"><span style="font-family: 'Concert One', sans-serif;">Meet <%= @pet.title %></span>!</span></h1>
 </div>
 
 <div class="container text-center">
@@ -12,28 +12,56 @@
   <% end %>
 </div>
 
-<div class="container pet-details">
-  <div class="details-section">
-    <p><strong>Description:</strong> <%= @pet.description %></p>
-    <p><strong>Breed:</strong> <%= @pet.breed %></p>
-    <p><strong>Age:</strong> <%= @pet.age %> years old</p>
-    <p><strong>Status:</strong> <%= @pet.status.humanize %></p>
-    <p><strong>Location:</strong> <%= @pet.location %></p>
-  </div>
+<div class="container">
+    <div class="row">
+    <!-- Card 1: Age, Breed, Size, Gender, Location -->
+      <div class="col-md-4">
+        <div class="card_details">
+          <div class="card-body">
+            <h5 class="card-title">Details</h5>
+            <p><strong>Breed:</strong> <%= @pet.breed %></p>
+            <p><strong>Age:</strong> <%= @pet.age %> years old</p>
+            <p><strong>Status:</strong> <%= @pet.status.humanize %></p>
+          </div>
+        </div>
+      </div>
 
-  <div class="d-flex justify-content-between">
-    <% if user_signed_in? %>
-      <% if @pet.user == current_user %>
-        <%= link_to 'Edit', edit_pet_path(@pet), class: 'btn btn-primary' %>
-      <% elsif @pet.status == 'available' %>
-        <%= link_to 'Adopt', new_pet_adoption_path(pet_id: @pet.id), class: 'btn btn-primary adopt-button'%>
-      <% end %>
-      <%= link_to 'Back', pets_path, class: 'btn btn-secondary' %>
-    <% else %>
-      <%= link_to 'Back', pets_path, class: 'btn btn-secondary' %>
-    <% end %>
-  </div>
+      <!-- Card 2: Personality -->
+      <div class="col-md-4">
+        <div class="card_details">
+          <div class="card-body">
+            <h5 class="card-title">Personality</h5>
+            <p><strong></strong> <%= @pet.description %></p>
+            <%# <p class="card-text"><%= @pet.personality %></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Health Info -->
+      <div class="col-md-4">
+        <div class="card_details">
+          <div class="card-body">
+            <h5 class="card-title">Location</h5>
+            <p><%= @pet.location %></p>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
+  <!-- Buttons: Edit, Adopt, Back -->
+<div class="container mt-4 mb-5 d-flex flex-column align-items-center">
+  <% if user_signed_in? %>
+    <% if @pet.user == current_user %>
+      <%= link_to 'Edit', edit_pet_path(@pet), class: 'btn furever-button mb-3', style: 'width: 300px; padding: 10px 15px; text-align: center;' %>
+    <% elsif @pet.status == 'available' %>
+      <%= link_to 'Take me home', new_pet_adoption_path(pet_id: @pet.id), class: 'btn furever-button mb-3', style: 'width: 300px; padding: 10px 15px; text-align: center;' %>
+    <% end %>
+    <%= link_to 'Back to see more', pets_path, class: 'btn furever-button', style: 'width: 300px; padding: 10px 15px; text-align: center;' %>
+  <% else %>
+    <%= link_to 'Back to see more', pets_path, class: 'btn furever-button', style: 'width: 300px; padding: 10px 15px; text-align: center;' %>
+  <% end %>
+</div>
+
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

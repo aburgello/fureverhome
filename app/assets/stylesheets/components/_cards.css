@@ -1,22 +1,45 @@
 .card {
-  margin: 20px 0;
-  border-radius: 15px;
-  transition: all 0.3s ease;
+  border: none;
+  box-shadow: none; /* Remove shadow */
+  background-color: white;
+  box-shadow: #464646;
 }
 
 .card img {
   height: 200px;
   object-fit: cover;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   transition: all 0.3s ease;
 }
 
 .card:hover {
   transform: scale(1.10);
   border-color: rgb(228, 156, 62);
-  box-shadow: rgba(233, 175, 15, 0.4) 0px 5px, rgba(240, 195, 46, 0.3) 0px 10px, rgba(240, 172, 46, 0.2) 0px 15px, rgba(240, 156, 46, 0.1) 0px 20px, rgba(240, 149, 46, 0.05) 0px 25px;
+  box-shadow: rgba(233, 175, 15, 0.4) 0px 5px,
 
+}
+
+.card_details {
+  margin: 0px auto;
+  padding: 0px;
+  max-width: 1200px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0); /* Remove shadow */
+  border: 1px solid #ccc;   /* Set thin border: 1px */
+}
+
+.card_details h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #323440;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+
+.card_details p {
+  font-size: 1.2rem;
 }
 
 .card:hover img {
@@ -29,8 +52,10 @@
   background-size:contain;
   background-repeat:no-repeat;
   background-position:center center
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
-  
+
 .card-title {
     color: rgb(68, 57, 41);
     font-size: 1.25rem;
@@ -54,6 +79,7 @@
       transition: 0.3s ease;
   }
   }
+
 
   @keyframes shimmer {
     100% {-webkit-mask-position:left}
