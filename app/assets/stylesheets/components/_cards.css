@@ -78,6 +78,7 @@
 
 .card:hover img {
   -webkit-mask:linear-gradient(-60deg,#464646 50%,rgba(48, 48, 48, 0.333),#a8a8a8 70%) right/360% 100%;
+  mask:linear-gradient(-60deg,#464646 50%,rgba(48, 48, 48, 0.333),#a8a8a8 70%) right/360% 100%;
   background-repeat: no-repeat;
   animation: shimmer 1.3s ease-out;
   overflow: hidden;
@@ -85,7 +86,7 @@
   padding-bottom:4px;
   background-size:contain;
   background-repeat:no-repeat;
-  background-position:center center
+  background-position:center center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -100,6 +101,19 @@
     font-size: 1rem;
     margin-bottom: 15px;
     color: black;
+  }
+
+
+  .btn {
+    background-color: #323440;
+    border-color: rgb(207, 207, 207);
+    color: white;
+    &:hover {
+      background-color: #fdcd07;
+      color: #323440;
+      border-color: white;
+      transition: 0.3s ease;
+  }
   }
 
 

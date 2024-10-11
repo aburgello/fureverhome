@@ -8,12 +8,9 @@
           <% @my_requests.each do |adoption| %>
             <div id="<%= dom_id(adoption) %>" class="col-md-4 mb-4">
               <div class="card h-100 shadow-sm">
-                  <div class="card-header">
+                <div class="card-header">
                   <h5 class="card-title mb-0">Request for <%= adoption.pet.title %></h5>
-                     </div>
-                     <div class="card-body">
-
-                  <p class="card-text"><strong>Email:</strong> <%= adoption.adopter_email %></p>
+                  <p class="card-text mt-3"><strong>Email:</strong> <%= adoption.adopter_email %></p>
                   <p class="card-text"><strong>Message:</strong> <%= adoption.message %></p>
                   <div class="mt-4 d-flex justify-content-between">
                     <%= link_to 'Message', adoption_messages_path(adoption), class: 'btn btn-primary btn-sm' %>
@@ -49,7 +46,6 @@
                         <p class="card-text"><strong>Message:</strong> <%= adoption.message %></p>
                         <div class="mt-4 d-flex justify-content-between">
                           <%= link_to 'Message', adoption_messages_path(adoption), class: 'btn btn-primary btn-sm' %>
-                          <%= link_to 'Delete', pet_adoption_path(adoption.pet, adoption), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
                         </div>
                       </div>
                     <% end %>
@@ -69,47 +65,62 @@
 </div>
 
 
+
 <style>
   .container {
     max-width: 1300px;
   }
 
   .card {
-    border: 2px solid #d4d2bf;
+    border: 2px solid #E5EEFF;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 14px;
     max-height: 220px;
+    transition: all 0.6s ease;
   }
 
+.card:hover{
+  border-color: #323440;
+}
 
+.card-header {
+  border-bottom: none;
+}
+
+.card-title {
+  color: #323440;
+  border-bottom: 2px solid #E5EEFF;
+  padding-bottom: 5px;
+}
   .card-header:first-child  {
-    background-color: #f9f7f3;
-    border-radius: 14px 14px 0 0;
-
+    background-color: white;
+    border-radius: 14px;
   }
 
   .btn {
     font-size: 1.1rem;
+    background-color: #323440;
+  }
+
+  .btn:hover {
+    background-color: #fdcd07;
+    color: #323440
   }
 
   .alert {
     border-radius: 14px;
     padding: 20px;
     background-color: white;
-    border: 2px solid #d4d2bf;
+    border: 2px solid #E5EEFF;
     transition: all 0.3s ease;
   }
   .alert:hover {
-    border-color: rgb(228, 156, 62);
+    border-color: #fdcd07;
 
   }
 
   h5 {
     color: rgb(68, 57, 41);
   }
-
-
-  h1 {
-    font-size: 1.8rem;
-  }
-</style>
+  </style>
+  
