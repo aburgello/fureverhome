@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   get 'requests', to: 'requests#index'
 
   resources :pets do
-    resources :adoptions, only: [:new, :create, :destroy]
+    resources :adoptions, only: [:new, :create, :destroy] do
+      member do
+        patch :accept
+      end
+    end
   end
   resources :requests, only: [:index, :create]
 
