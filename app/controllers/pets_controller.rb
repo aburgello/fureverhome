@@ -59,10 +59,17 @@ class PetsController < ApplicationController
   end
 
   def load_requests
-    @my_requests = current_user.adoptions.where(status: 'pending')
-    @requests_for_my_pets = Adoption.joins(:pet).where(pets: { user_id: current_user.id, status: 'pending' }).includes(:user).group_by(&:pet)
-    @completed_requests_as_adopter = current_user.adoptions.where(status: ['accepted', 'rejected']).includes(:pet)
-    @completed_requests_as_owner = Adoption.joins(:pet).where(pets: { user_id: current_user.id }, status: ['accepted', 'rejected'])
+    if current_user
+      @my_requests = current_user.adoptions.where(status: 'pending')
+      @requests_for_my_pets = Adoption.joins(:pet).where(pets: { user_id: current_user.id, status: 'pending' }).includes(:user).group_by(&:pet)
+      @completed_requests_as_adopter = current_user.adoptions.where(status: ['accepted', 'rejected']).includes(:pet)
+      @completed_requests_as_owner = Adoption.joins(:pet).where(pets: { user_id: current_user.id }, status: ['accepted', 'rejected'])
+    else
+      @my_requests = []
+      @requests_for_my_pets = {}
+      @completed_requests_as_adopter = []
+      @completed_requests_as_owner = []
+    end
   end
 
   def authorise_owner!
