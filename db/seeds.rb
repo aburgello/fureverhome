@@ -2,7 +2,7 @@ puts "Seeding Pets!"
 
 pet_service = DogApiService
 
-statuses = ['available', 'available', 'available' 'adopted', 'pending']
+statuses = ['available', 'available', 'available', 'adopted', 'pending']
 
 creature_classes = [
   Faker::Creature::Dog,
