@@ -42,28 +42,41 @@
   </div>
 
   <!-- Submit a Testimonial Form -->
-  <div class="testimonial-form">
-    <h3>Submit Your Story</h3>
-    <p>Share your adoption success story with us. Your story will be reviewed before being published.</p>
+<div class="container pb-4 rounded mb-3">
+  <h3 class="text-left">Submit Your Story</h3>
+  <p>Share your adoption success story with us. Your story will be reviewed before being published.</p>
 
-    <form>
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+  <form enctype="multipart/form-data" action="/submit_testimonial" method="post">
+    <div class="mb-3">
+      <label class="form-label" for="name">Your Name</label>
+      <input type="text" class="form-control" id="name" name="testimonial[name]" placeholder="Enter your name" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="pet-name">Your Pet's Name</label>
+      <input type="text" class="form-control" id="pet-name" name="testimonial[pet_name]" placeholder="Enter your pet's name" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="testimonial">Your Testimonial</label>
+      <textarea class="form-control" id="testimonial" name="testimonial[story]" rows="5" placeholder="Write your story here" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="photo">Upload a Photo</label>
+      <input type="file" class="form-control" id="photo" name="testimonial[photo]" accept="image/*">
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <div>
+        <button type="submit" class="furever-button" style="text-decoration: none; color: white; font-size: 0.9rem">Submit Testimonial</button>
       </div>
-      <div class="form-group">
-        <label for="pet-name">Your Pet's Name</label>
-        <input type="text" class="form-control" id="pet-name" placeholder="Enter your pet's name">
+      <div class="furever-button">
+        <a href="/testimonials" style="text-decoration: none; color: white; font-size: 0.9rem">Back</a>
       </div>
-      <div class="form-group">
-        <label for="testimonial">Your Testimonial</label>
-        <textarea class="form-control" id="testimonial" rows="5" placeholder="Write your story here"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="photo">Upload a Photo</label>
-        <input type="file" class="form-control-file" id="photo">
-      </div>
-      <button type="submit" class="submit-btn">Submit Testimonial</button>
-    </form>
+    </div>
+  </form>
+</div>
+
   </div>
 </div>
