@@ -30,7 +30,7 @@
               <p class="card-text"><%= pet.location %></p>
 
               <% if pet.status == 'available' %>
-                <%= link_to "Adopt #{pet.title}", pet_path(pet), class: 'furever-button mt-3' %>
+                <div class="adopt-btn-card"><%= link_to "Adopt #{pet.title}", pet_path(pet), class: 'furever-button mt-3' %></div>
               <% elsif pet.status == 'pending' %>
                 <button class="furever-button furever-button-ongoing mt-3" disabled>Adoption Ongoing</button>
               <% elsif pet.status == 'adopted' %>
@@ -43,8 +43,6 @@
     <% end %>
   </div>
 </div>
-
-
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
