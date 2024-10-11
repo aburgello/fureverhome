@@ -130,7 +130,19 @@
   background-color: #d4e3f5 !important; /* Slightly darker blue on hover */
 }
 
+.shimmery {
+  animation: shimmer 1.6s infinite;
+  -webkit-mask:linear-gradient(-60deg,#464646 50%,rgba(48, 48, 48, 0.333),#a8a8a8 70%) right/360% 100%;
+}
 
+@keyframes shimmer {
+  0% {
+    -webkit-mask-position: 100% 0; /* Start from the right */
+  }
+  100% {
+    -webkit-mask-position: 0 0; /* Move to the left */
+  }
+}
 
 @keyframes wiggle {
   0%, 7% {
@@ -156,6 +168,4 @@
   }
 }
 
-@keyframes shimmer {
-  100% {-webkit-mask-position:left}
-}
+

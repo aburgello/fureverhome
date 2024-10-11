@@ -13,8 +13,10 @@
                   <p class="card-text mt-3"><strong>Email:</strong> <%= adoption.adopter_email %></p>
                   <p class="card-text"><strong>Message:</strong> <%= adoption.message %></p>
                   <div class="mt-4 d-flex justify-content-between">
-                    <%= link_to 'Message', adoption_messages_path(adoption), class: 'btn btn-primary btn-sm' %>
-                    <%= link_to 'Delete', pet_adoption_path(adoption.pet, adoption), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-primary btn-sm' %>
+
+                    <%= link_to 'Message', adoption_messages_path(adoption), class: 'furever-button' %>
+                    <%= link_to 'Delete', pet_adoption_path(adoption.pet, adoption), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'furever-button' %>
+
                   </div>
                 </div>
               </div>
@@ -45,7 +47,9 @@
                         <p class="card-text"><strong>Email:</strong> <%= adoption.adopter_email %></p>
                         <p class="card-text"><strong>Message:</strong> <%= adoption.message %></p>
                         <div class="mt-4 d-flex justify-content-between">
-                          <%= link_to 'Message', adoption_messages_path(adoption), class: 'btn btn-primary' %>
+
+                          <%= link_to 'Message', adoption_messages_path(adoption), class: 'furever-button' %>
+
                         </div>
                       </div>
                     <% end %>
@@ -97,14 +101,15 @@
     border-radius: 14px;
   }
 
-  .btn {
-    font-size: 1.1rem;
+  .furever-button {
+    margin-top: 5px;
+    font-size: 0.8rem;
     background-color: #323440;
   }
 
-  .btn:hover {
+  .furever-button:hover {
     background-color: #fdcd07;
-    color: #323440
+    color: #323440;
   }
 
   .alert {
