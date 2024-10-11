@@ -43,10 +43,23 @@
 
   <div class="d-flex justify-content-between">
     <div>
-      <%= f.submit "Create Pet", class: 'btn btn-primary btn-lg' %>
+      <%= f.submit "Create Pet", class: 'btn furever-button' %>
     </div>
     <div>
-      <%= link_to 'Back', pets_path, class: 'btn btn-primary btn-lg' %>
+      <%= link_to 'Back', pets_path, class: 'btn furever-button' %>
     </div>
   </div>
 <% end %>
+
+<style>
+.furever-button {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    background-color: #323440;
+  }
+
+  .furever-button:hover {
+    background-color: #fdcd07;
+    color: #323440
+  }
+  </style>
