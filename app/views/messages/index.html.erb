@@ -2,7 +2,6 @@
   <h1 class="text-center my-4">Messages About <%= @adoption.pet.title %></h1>
   <div class="card-msg shadow-sm mb-4 p-3">
     <div class="messages-box mb-4 p-3 border rounded" id="messages-box" style="max-height: 360px; overflow-y: auto; background-color: white">
-
       <% if @messages.present? %>
         <% @messages.each do |message| %>
           <div class="message mb-3 p-2 border-bottom">
@@ -16,7 +15,11 @@
       <% else %>
         <p class="text-center text-muted">Start the conversation!</p>
       <% end %>
+    </div>
 
+    <div class="d-flex justify-content-end mb-3">
+      <%= button_to 'Accept', accept_adoption_path(@adoption), method: :patch, class: 'btn btn-success me-2' %>
+      <%= button_to 'Reject', reject_adoption_path(@adoption), method: :patch, class: 'btn btn-danger' %>
     </div>
 
     <%= form_with model: [@adoption, @message], local: true, class: 'mb-3' do |f| %>
