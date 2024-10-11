@@ -36,6 +36,10 @@
   color: #333;
 }
 
+.navbar {
+  font-family: 'Montserrat', sans-serif;
+}
+
 
 .btn {
     cursor: url(https://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
