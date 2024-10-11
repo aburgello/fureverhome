@@ -1,5 +1,8 @@
-<h1 class="text-center my-4" id="index-title">New Pet</h1>
-
+<section class="container-fluid mt-5">
+  <div class="container">
+    <h2 class="text-left">New Pet</h2>
+  </div>
+</section>
 
 <%= form_with model: @pet, local: true, class: 'container pb-4 rounded mb-3' do |f| %>
 
@@ -43,7 +46,7 @@
       <%= f.submit "Create Pet", class: 'btn btn-primary btn-lg' %>
     </div>
     <div>
-      <%= link_to 'Back', pets_path, class: 'btn btn-secondary btn-lg' %>
+      <%= link_to 'Back', pets_path, class: 'btn btn-primary btn-lg' %>
     </div>
   </div>
 <% end %>
