@@ -34,6 +34,10 @@
         <li class="nav-item <%= 'active' if current_page?(pets_path) %>">
           <%= link_to "Pets", pets_path, class: "nav-link" %>
         </li>
+        <!-- Add Testimonials Link here -->
+        <li class="nav-item <%= 'active' if current_page?(testimonials_path) %>">
+          <%= link_to "Testimonials", testimonials_path, class: "nav-link" %>
+        </li>
       </ul>
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
@@ -72,6 +76,9 @@
     </div>
   </div>
 </nav>
+
+
+
 <main>
   <%= yield %>
 </main>
@@ -93,10 +100,3 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-

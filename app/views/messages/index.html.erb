@@ -30,8 +30,10 @@
         <%= f.text_area :content, class: 'form-control', rows: 3, id: 'message_content' %>
       </div>
       <div class="d-flex justify-content-between">
+
         <%= f.submit "Send Message", class: 'furever-button' %>
         <%= link_to 'Back to Requests', requests_path, class: 'furever-button' %>
+
       </div>
     <% end %>
   </div>
@@ -61,3 +63,4 @@
   }
   
 </style>
+
