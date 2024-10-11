@@ -1,4 +1,4 @@
-.furever-button, .meet-our-pets-button {
+.furever-button, .meet-our-pets-button .btn-sm {
   background-color: #323440;
   color: white !important;
   padding: 12px 25px;
@@ -19,6 +19,11 @@
 
 .furever-button a{
   text-decoration: none;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 0.875rem; /* Make the buttons smaller */
 }
 
 .adopt-button{

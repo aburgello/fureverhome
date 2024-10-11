@@ -4,13 +4,16 @@
   }
 
   .pet-header h1 {
+    font-family: 'Roboto Slab', serif;
     color: #333;
     font-size: 3rem;
-    text-align: center;
-    font-family: 'Bangers';
+    text-align: left;
+    padding: 20px;
+    /* font-family: 'Bangers'; */
   }
 
   .sparkles {
+    font-family: 'Roboto Slab', serif;
     position: relative;
     display: inline-block;
   }
@@ -34,28 +37,35 @@
   }
 
   .pet-image {
-    display: block;
-    margin: 0 auto;
-    border-radius: 25px;
-    max-width: 90%;
-    max-height: 400px;
-    object-fit: cover;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  }
+    width: 100%;               /* Set image width to be responsive */
+    height: auto;              /* Keep aspect ratio by setting height auto */
+    max-width: 100%;           /* Make sure it doesn't exceed the container */
+    object-fit: cover;         /* Scale the image to cover the frame */
+    object-position: center;   /* Center the image focus */
+    border-radius: 5px;        /* Slightly rounded corners */
+    margin: 20px 0;            /* Add margin for spacing */
+    padding: 10px;             /* Add padding for spacing */
+    background-color: white;   /* Add a white background around image */
+    border: 1px solid #ccc;    /* Thin gray border */
+    max-height: 800px;         /* Set a maximum height for larger images */
+}
 
   .pet-details {
-    margin: 40px auto;
-    padding: 20px;
+    margin: 0px auto;
+    padding: 0px;
     max-width: 800px;
     background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0); /* Remove shadow */
+    border: 0.2px solid #ebebeb;   /* Set thin border: 1px */
+}
 
   .pet-details h5 {
     font-size: 1.5rem;
-    color: #c5a880;
+    font-weight: bold;
+    color: #323440;
     margin-bottom: 20px;
+    background-color: #ffffff;
   }
 
   .pet-details p {
@@ -63,12 +73,24 @@
   }
 
   .btn-custom {
-    background-color: #c5a880;
+    background-color: #323440;
+    color: white !important;
+    padding: 12px 25px;
     border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    letter-spacing: 0.5px;
   }
 
   .btn-custom:hover {
-    background-color: #b0906a;
+    -webkit-mask:linear-gradient(-60deg,#464646 50%,rgba(48, 48, 48, 0.333),#a8a8a8 70%) right/360% 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    animation: shimmer ease-out 1.3s infinite;
+    background-color: #f19e5b;
   }
 
   .details-section {

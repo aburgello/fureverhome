@@ -10,8 +10,6 @@
               <div class="card h-100 shadow-sm">
                 <div class="card-header">
                   <h5 class="card-title mb-0">Request for <%= adoption.pet.title %></h5>
-                </div>
-                <div class="card-body">
                   <p class="card-text"><strong>Email:</strong> <%= adoption.adopter_email %></p>
                   <p class="card-text"><strong>Message:</strong> <%= adoption.message %></p>
                   <div class="mt-4 d-flex justify-content-between">
@@ -65,3 +63,49 @@
     <% end %>
   </div>
 </div>
+
+
+<style>
+  .container {
+    max-width: 1300px;
+  }
+
+  .card {
+    border: 2px solid #d4d2bf;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 14px;
+    max-height: 220px;
+  }
+
+
+  .card-header:first-child  {
+    background-color: #f9f7f3;
+    border-radius: 14px 14px 0 0;
+
+  }
+
+  .btn {
+    font-size: 1.1rem;
+  }
+
+  .alert {
+    border-radius: 14px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #d4d2bf;
+    transition: all 0.3s ease;
+  }
+  .alert:hover {
+    border-color: rgb(228, 156, 62);
+
+  }
+
+  h5 {
+    color: rgb(68, 57, 41);
+  }
+
+
+  h1 {
+    font-size: 1.8rem;
+  }
+</style>
