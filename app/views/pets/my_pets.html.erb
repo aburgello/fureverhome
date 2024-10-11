@@ -11,7 +11,7 @@
             </div>
             <div>
               <%= link_to 'Edit', edit_pet_path(pet), class: 'furever-button' %>
-              <%= link_to 'Delete', pet_path(pet), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'furever-button' %>
+              <%= link_to 'Delete', pet_path(pet), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'furever-button furever-button-delete' %>
             </div>
           </li>
         <% end %>
@@ -20,7 +20,7 @@
       <p class="text-center mt-3">You have not created any pet listings yet.</p>
     <% end %>
 
-    <div class="text-center my-4">
+    <div class="text-center mt-5">
       <%= link_to 'Create New Pet', new_pet_path, class: 'furever-button bottom' %>
       <%= link_to 'Back to All Pets', pets_path, class: 'furever-button bottom' %>
     </div>
@@ -150,14 +150,22 @@
     border-color: #fdcd07;
 
   }
-
+ .furever-button-delete {
+    font-size: 0.6rem;
+    padding: 10px;
+    background-color: #FC1B15;
+  }
+  .furever-button-delete:hover {
+    background-color: grey;
+    color: black;
+  }
   .furever-button {
     font-size: 0.6rem;
     padding: 10px;
   }
   .bottom {
     font-size: 0.8rem;
-    padding: auto;
+    padding: 20px;
   }
   h5 {
     color: rgb(68, 57, 41);
