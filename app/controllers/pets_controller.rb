@@ -42,13 +42,14 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @pet.destroy
     respond_to do |format|
-    format.html { redirect_to pets_path, notice: 'Pet listing deleted.' }
-    format.turbo_stream
+      format.html { redirect_to pets_path, notice: 'Pet listing deleted.' }
+      format.turbo_stream
     end
   end
 
   def my_pets
     @pets = current_user.pets
+    @completed_requests = @completed_requests_as_owner + @completed_requests_as_adopter
   end
 
   private

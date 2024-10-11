@@ -28,9 +28,9 @@
 <h1 class="text-center my-4" id="completed-requests-title">Completed Requests</h1>
 
 <div class="container">
-  <% if @completed_requests_as_owner.present? %>
+  <% if @completed_requests.present? %>
     <div class="row">
-      <% @completed_requests_as_owner.each do |adoption| %>
+      <% @completed_requests.each do |adoption| %>
         <div id="<%= dom_id(adoption) %>" class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm">
             <%= link_to adoption_messages_path(adoption), class: 'text-decoration-none text-dark' do %>
