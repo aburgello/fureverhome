@@ -10,7 +10,7 @@
               <div class="card h-100 shadow-sm">
                 <div class="card-header">
                   <h5 class="card-title mb-0">Request for <%= adoption.pet.title %></h5>
-                  <p class="card-text"><strong>Email:</strong> <%= adoption.adopter_email %></p>
+                  <p class="card-text mt-3"><strong>Email:</strong> <%= adoption.adopter_email %></p>
                   <p class="card-text"><strong>Message:</strong> <%= adoption.message %></p>
                   <div class="mt-4 d-flex justify-content-between">
                     <%= link_to 'Message', adoption_messages_path(adoption), class: 'btn btn-primary btn-sm' %>
@@ -66,3 +66,57 @@
 
 
 
+<style>
+  .container {
+    max-width: 1300px;
+  }
+
+  .card {
+    border: 2px solid #E5EEFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 14px;
+    max-height: 220px;
+    transition: all 0.6s ease;
+  }
+
+.card:hover{
+  border-color: #323440;
+}
+
+.card-title {
+  color: #323440;
+  border-bottom: 2px solid #E5EEFF;
+  padding-bottom: 5px;
+}
+  .card-header:first-child  {
+    background-color: white;
+    border-radius: 14px;
+
+  }
+
+  .btn {
+    font-size: 1.1rem;
+    background-color: #323440;
+  }
+
+  .btn:hover {
+    background-color: #fdcd07;
+    color: #323440
+  }
+
+  .alert {
+    border-radius: 14px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #d4d2bf;
+    transition: all 0.3s ease;
+  }
+  .alert:hover {
+    border-color: #AA856A;
+
+  }
+
+  h5 {
+    color: rgb(68, 57, 41);
+  }
+  </style>

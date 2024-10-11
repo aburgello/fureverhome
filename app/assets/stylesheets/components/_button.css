@@ -15,6 +15,7 @@
   background-color: #FDCD07;
   cursor: url(https://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
   text-decoration: none;
+  color: #323440;
 }
 
 .furever-button a{
@@ -69,9 +70,10 @@
 
 /* Hover Effect for Buttons */
 .button:hover, .meet-our-pets-button:hover {
-  background-color: #A5B68D; /* Green shade on hover */
+  background-color: #FDCD07; /* Green shade on hover */
   cursor: pointer;
   text-decoration: none; /* Prevent underline on hover */
+  color: #323440;
 }
 
 
