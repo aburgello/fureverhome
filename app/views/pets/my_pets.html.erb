@@ -27,7 +27,7 @@
   </div>
 <% end %>
 
-<h1 class="text-center my-4" id="completed-requests-title">Completed Requests</h1>
+<h1 class="text-center my-4" id="completed-requests-title">Completed Adoptions</h1>
 
 <div class="container mb-3">
   <% if @completed_requests.present? %>
@@ -38,7 +38,7 @@
             <%= link_to adoption_messages_path(adoption), class: 'text-decoration-none text-dark' do %>
               <div class="card-header">
                 <h5 class="card-title mb-0">
-                  <%= adoption.status.capitalize %> Request for <%= adoption.pet.title %>
+                  <%= adoption.status.capitalize %> Adoption for <%= adoption.pet.title %>
                 </h5>
               </div>
               <div class="card-body">
@@ -82,10 +82,10 @@
 
   .container {
     max-width: 1300px;
-  
+
   }
 
- 
+
 .card:hover{
   border-color: #323440;
 }
@@ -117,7 +117,7 @@
     border-radius: 14px;
   }
 
-  
+
 .card {
     border: 2px solid #E5EEFF;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -145,9 +145,8 @@
     border-color: #fdcd07;
 
   }
- 
+
   h5 {
     color: rgb(68, 57, 41);
   }
   </style>
-  
