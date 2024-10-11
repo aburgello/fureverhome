@@ -20,9 +20,9 @@
       <p class="text-center mt-3">You have not created any pet listings yet.</p>
     <% end %>
 
-    <div class="text-center my-3">
-      <%= link_to 'Create New Pet', new_pet_path, class: 'btn btn-primary me-2' %>
-      <%= link_to 'Back to All Pets', pets_path, class: 'btn btn-secondary' %>
+    <div class="text-center my-4">
+      <%= link_to 'Create New Pet', new_pet_path, class: 'furever-button' %>
+      <%= link_to 'Back to All Pets', pets_path, class: 'furever-button' %>
     </div>
   </div>
 <% end %>
@@ -144,6 +144,10 @@
   .alert:hover {
     border-color: #fdcd07;
 
+  }
+
+  .furever-button {
+    font-size: 0.8rem;
   }
  
   h5 {

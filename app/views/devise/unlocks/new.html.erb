@@ -10,7 +10,7 @@
     </div>
 
     <div class="text-center">
-      <%= f.submit "Resend Unlock Instructions", class: "btn btn-primary" %>
+      <%= f.submit "Resend Unlock Instructions", class: "furever-button" %>
     </div>
   <% end %>
 
@@ -21,3 +21,16 @@
 </div>
 
     <%= stylesheet_link_tag 'main', media: 'all', 'data-turbo-track': 'reload' %>
+
+ <style>
+.furever-button {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    background-color: #323440;
+  }
+
+  .furever-button:hover {
+    background-color: #fdcd07;
+    color: #323440
+  }
+  </style>

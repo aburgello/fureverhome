@@ -19,31 +19,32 @@
 
 <% if user_signed_in? && current_user == @adoption.pet.user && @adoption.status != 'accepted' %>
   <div class="d-flex justify-content-end mb-3">
-    <%= button_to 'Accept', accept_pet_adoption_path(@adoption.pet, @adoption), method: :patch, class: 'btn btn-success me-2' %>
-    <%= link_to 'Reject', pet_adoption_path(@adoption.pet, @adoption), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    <%= button_to 'Accept', accept_pet_adoption_path(@adoption.pet, @adoption), method: :patch, class: 'furever-button' %>
+    <%= link_to 'Reject', pet_adoption_path(@adoption.pet, @adoption), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'furever-button' %>
   </div>
 <% end %>
 
-    <%= form_with model: [@adoption, @message], local: true, class: 'mb-3' do |f| %>
+    <%= form_with model: [@adoption, @message], local: true, class: 'mb-1' do |f| %>
       <div class="mb-3">
         <%= f.label :content, "New Message", class: 'form-label' %>
         <%= f.text_area :content, class: 'form-control', rows: 3, id: 'message_content' %>
       </div>
       <div class="d-flex justify-content-between">
-        <%= f.submit "Send Message", class: 'btn btn-primary btn-lg' %>
-        <%= link_to 'Back to Requests', requests_path, class: 'btn btn-secondary btn-lg' %>
+        <%= f.submit "Send Message", class: 'furever-button' %>
+        <%= link_to 'Back to Requests', requests_path, class: 'furever-button' %>
       </div>
     <% end %>
   </div>
 </div>
 
 <style>
-  .btn {
-    font-size: 1.1rem;
+  .furever-button {
+    margin-top: 5px;
+    font-size: 0.8rem;
     background-color: #323440;
   }
 
-  .btn:hover {
+  .furever-button:hover {
     background-color: #fdcd07;
     color: #323440;
   }
@@ -58,4 +59,5 @@
     border: 2px solid #E5EEFF;
     border-radius: 14px;
   }
+  
 </style>

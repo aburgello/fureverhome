@@ -51,18 +51,19 @@
     </div>
 </div>
   <!-- Buttons: Edit, Adopt, Back -->
-<div class="container mt-4 mb-5 d-flex flex-column align-items-center">
+<div class="container mt-2 mb-5 d-flex justify-content-between">
   <% if user_signed_in? %>
     <% if @pet.user == current_user %>
-      <%= link_to 'Edit', edit_pet_path(@pet), class: 'btn furever-button mb-3', style: 'width: 300px; padding: 10px 15px; text-align: center;' %>
+      <%= link_to 'Edit', edit_pet_path(@pet), class: 'btn furever-button', style: 'width: 100%; padding: 10px 15px; text-align: center;' %>
     <% elsif @pet.status == 'available' %>
-      <%= link_to 'Take me home', new_pet_adoption_path(pet_id: @pet.id), class: 'btn furever-button mb-3', style: 'width: 300px; padding: 10px 15px; text-align: center;' %>
+      <%= link_to 'Adopt!', new_pet_adoption_path(pet_id: @pet.id), class: 'btn furever-button shimmery' %>
     <% end %>
-    <%= link_to 'Back to see more', pets_path, class: 'btn furever-button', style: 'width: 300px; padding: 10px 15px; text-align: center;' %>
+    <%= link_to 'Back to see more', pets_path, class: 'btn furever-button' %>
   <% else %>
-    <%= link_to 'Back to see more', pets_path, class: 'btn furever-button', style: 'width: 300px; padding: 10px 15px; text-align: center;' %>
+    <%= link_to 'Back to see more', pets_path, class: 'btn furever-button' %>
   <% end %>
 </div>
+
 
 
 
@@ -71,4 +72,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
+
+
 </html>

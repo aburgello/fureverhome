@@ -2,31 +2,44 @@
   <h5 class="mb-3">Or...</h5>
 
   <%- if controller_name != 'sessions' %>
-    <%= link_to "Log in", new_session_path(resource_name), class: "btn btn-link btn-block" %><br />
+    <%= link_to "Log in", new_session_path(resource_name), class: "furever-button btn-block" %><br />
   <% end %>
 
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-    <%= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-link btn-block" %><br />
+    <%= link_to "Sign up", new_registration_path(resource_name), class: "furever-button btn-block" %><br />
   <% end %>
 
   <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-    <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn-link btn-block" %><br />
+    <%= link_to "Forgot your password?", new_password_path(resource_name), class: "furever-button btn-block" %><br />
   <% end %>
 
   <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-    <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), class: "btn btn-link btn-block" %><br />
+    <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), class: "furever-button btn-block" %><br />
   <% end %>
 
   <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-    <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name), class: "btn btn-link btn-block" %><br />
+    <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name), class: "furever-button btn-block" %><br />
   <% end %>
 
   <%- if devise_mapping.omniauthable? %>
     <h6 class="mt-3">Or sign in with:</h6>
     <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: "btn btn-outline-primary mb-2" %><br />
+      <%= button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: "furever-button mb-2" %><br />
     <% end %>
   <% end %>
 </div>
 
     <%= stylesheet_link_tag 'main', media: 'all', 'data-turbo-track': 'reload' %>
+
+  <style>
+.furever-button {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    background-color: #323440;
+  }
+
+  .furever-button:hover {
+    background-color: #fdcd07;
+    color: #323440
+  }
+  </style>
