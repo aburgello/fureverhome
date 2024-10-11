@@ -70,11 +70,11 @@
   }
 
   .btn {
-    background-color: #c5a880;
+    background-color: #323440;
     border-color: rgb(207, 207, 207);
     color: white;
     &:hover {
-      background-color: #867153;
+      background-color: #fdcd07;
       color: white;
       border-color: white;
       transition: 0.3s ease;
