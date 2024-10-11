@@ -44,6 +44,7 @@
 
 .card:hover img {
   -webkit-mask:linear-gradient(-60deg,#464646 50%,rgba(48, 48, 48, 0.333),#a8a8a8 70%) right/360% 100%;
+  mask:linear-gradient(-60deg,#464646 50%,rgba(48, 48, 48, 0.333),#a8a8a8 70%) right/360% 100%;
   background-repeat: no-repeat;
   animation: shimmer 1.3s ease-out;
   overflow: hidden;
