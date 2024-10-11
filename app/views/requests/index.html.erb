@@ -14,7 +14,7 @@
                   <p class="card-text"><strong>Message:</strong> <%= adoption.message %></p>
                   <div class="mt-4 d-flex justify-content-between">
                     <%= link_to 'Message', adoption_messages_path(adoption), class: 'btn btn-primary btn-sm' %>
-                    <%= link_to 'Delete', pet_adoption_path(adoption.pet, adoption), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+                    <%= link_to 'Delete', pet_adoption_path(adoption.pet, adoption), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-primary btn-sm' %>
                   </div>
                 </div>
               </div>
@@ -45,7 +45,7 @@
                         <p class="card-text"><strong>Email:</strong> <%= adoption.adopter_email %></p>
                         <p class="card-text"><strong>Message:</strong> <%= adoption.message %></p>
                         <div class="mt-4 d-flex justify-content-between">
-                          <%= link_to 'Message', adoption_messages_path(adoption), class: 'btn btn-primary btn-sm' %>
+                          <%= link_to 'Message', adoption_messages_path(adoption), class: 'btn btn-primary' %>
                         </div>
                       </div>
                     <% end %>
