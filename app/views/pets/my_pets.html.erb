@@ -1,4 +1,4 @@
-<h1 class="text-center my-4"  id="index-title">My Pets</h1>
+<h1 class="text-center my-4" id="index-title">My Pets</h1>
 
 <div class="container">
   <% if @pets.any? %>
@@ -6,7 +6,7 @@
       <% @pets.each do |pet| %>
         <li id="<%= dom_id(pet) %>" class="list-group-item d-flex justify-content-between align-items-center">
           <div>
-            <%= link_to pet.title, pet_path(pet), class: 'fw-bold' %> - <%= pet.breed %> - <%= pet.age %> years old
+            <%= link_to pet.title, pet_path(pet), class: 'fw-bold' %> - <%= pet.breed %> - <%= pet.age %> years old - <%= pet.status %>
           </div>
           <div>
             <%= link_to 'Edit', edit_pet_path(pet), class: 'btn btn-warning btn-sm me-2' %>
