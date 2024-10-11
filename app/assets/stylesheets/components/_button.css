@@ -1,4 +1,4 @@
-.stylish-button, .meet-our-pets-button {
+.furever-button, .meet-our-pets-button {
   background-color: #323440;
   color: white !important;
   padding: 12px 25px;
@@ -13,14 +13,11 @@
 
 }
 
-.stylish-button:hover, .meet-our-pets-button:hover {
+.furever-button:hover, .meet-our-pets-button:hover {
   background-color: #2c2e39;
   cursor: url(https://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
 }
-.meet-our-pets-button {
-  margin-top: 20px;
-  color: white !important;
-}
+
 
 .adopt-button{
   background-color: #FFA756;
@@ -40,6 +37,36 @@
   background-color: #f19e5b;
 
 }
+
+/* Specific Styles for Meet Our Pets Button */
+.meet-our-pets-button {
+  margin-top: 20px; /* Add spacing if needed */
+  color: white !important; /* Force white text specifically for this button */
+  text-decoration: none; /* Prevent underline */
+}
+
+/* Button Styles */
+.button, .meet-our-pets-button {
+  background-color: #FFA756; /* Logo color for buttons */
+  color: white !important; /* Force white text color with important flag */
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem; /* Normal, readable font */
+  font-family: 'Montserrat', sans-serif; /* Use Montserrat or your base font */
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  letter-spacing: 0.5px;
+  text-decoration: none; /* Prevent underline */
+}
+
+/* Hover Effect for Buttons */
+.button:hover, .meet-our-pets-button:hover {
+  background-color: #A5B68D; /* Green shade on hover */
+  cursor: pointer;
+  text-decoration: none; /* Prevent underline on hover */
+}
+
 
 @keyframes wiggle {
   0%, 7% {
