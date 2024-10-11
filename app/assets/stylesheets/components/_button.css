@@ -21,8 +21,9 @@
 
 
 .btn-sm {
-  padding: 5px 10px;
-  font-size: 0.875rem; /* Make the buttons smaller */
+  padding: 10px 10px;
+  font-size: 0.875rem;
+  margin-bottom: 10px; /* Make the buttons smaller */
 }
 
 .adopt-button{
