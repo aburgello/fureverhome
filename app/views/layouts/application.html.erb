@@ -35,6 +35,9 @@
           <%= link_to "Pets", pets_path, class: "nav-link" %>
         </li>
         <!-- Add Testimonials Link here -->
+        <li class="nav-item <%= 'active' if current_page?(about_path) %>">
+          <%= link_to "About Us", about_path, class: "nav-link" %>
+        </li>
         <li class="nav-item <%= 'active' if current_page?(testimonials_path) %>">
           <%= link_to "Testimonials", testimonials_path, class: "nav-link" %>
         </li>
