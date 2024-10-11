@@ -5,7 +5,6 @@ class AdoptionsController < ApplicationController
   before_action :load_requests, only: [:index, :accept, :destroy]
 
   def index
-    # This action can be used to display all requests if needed
   end
 
   def new
@@ -38,7 +37,8 @@ class AdoptionsController < ApplicationController
         user: current_user,
         content: "Congratulations! #{@pet.title} is now yours."
       )
-      redirect_to requests_path, notice: 'Adoption request accepted.'
+      load_requests  # Ensure that the requests are reloaded after accepting
+      redirect_to my_pets_path, notice: 'Adoption request accepted.'
     else
       redirect_to requests_path, alert: 'Failed to accept the adoption request.'
     end

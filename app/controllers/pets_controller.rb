@@ -1,6 +1,7 @@
 class PetsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy my_pets]
   before_action :authorise_owner!, only: %i[new create edit update destroy]
+  before_action :load_requests
 
   def index
     @pets = Pet.all
@@ -54,6 +55,13 @@ class PetsController < ApplicationController
 
   def pet_params
     params.require(:pet).permit(:title, :description, :status, :breed, :age, :image_url, :image, :location)
+  end
+
+  def load_requests
+    @my_requests = current_user.adoptions.where(status: 'pending')
+    @requests_for_my_pets = Adoption.joins(:pet).where(pets: { user_id: current_user.id, status: 'pending' }).includes(:user).group_by(&:pet)
+    @completed_requests_as_adopter = current_user.adoptions.where(status: ['accepted', 'rejected']).includes(:pet)
+    @completed_requests_as_owner = Adoption.joins(:pet).where(pets: { user_id: current_user.id }, status: ['accepted', 'rejected'])
   end
 
   def authorise_owner!
