@@ -54,7 +54,7 @@
 <div class="container mt-2 mb-5 d-flex justify-content-between">
   <% if user_signed_in? %>
     <% if @pet.user == current_user %>
-      <%= link_to 'Edit', edit_pet_path(@pet), class: 'btn furever-button', style: 'width: 100%; padding: 10px 15px; text-align: center;' %>
+      <%= link_to 'Edit', edit_pet_path(@pet), class: 'btn furever-button' %>
     <% elsif @pet.status == 'available' %>
       <%= link_to 'Adopt!', new_pet_adoption_path(pet_id: @pet.id), class: 'btn furever-button shimmery' %>
     <% end %>
