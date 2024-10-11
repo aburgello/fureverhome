@@ -47,9 +47,11 @@
                 <p class="card-text"><strong>Status:</strong> <%= adoption.status.capitalize %></p>
               </div>
             <% end %>
-            <div class="card-footer text-right">
-              <%= link_to 'Delete', pet_adoption_path(adoption.pet, adoption), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this completed request?' }, class: 'btn btn-danger btn-sm' %>
-            </div>
+            <% if current_user.role == 'owner' %>
+              <div class="card-footer text-right">
+                <%= link_to 'Delete', pet_adoption_path(adoption.pet, adoption), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this completed request?' }, class: 'btn btn-danger btn-sm' %>
+              </div>
+            <% end %>
           </div>
         </div>
       <% end %>
@@ -60,5 +62,4 @@
     </div>
   <% end %>
 </div>
-
 
