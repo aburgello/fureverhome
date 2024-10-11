@@ -75,7 +75,7 @@
     color: white;
     &:hover {
       background-color: #fdcd07;
-      color: white;
+      color: #323440;
       border-color: white;
       transition: 0.3s ease;
   }
