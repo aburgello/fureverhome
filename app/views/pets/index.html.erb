@@ -30,9 +30,9 @@
               <% if pet.status == 'available' %>
                 <div class="adopt-btn-card"><%= link_to "Adopt #{pet.title}", pet_path(pet), class: 'furever-button mt-3' %></div>
               <% elsif pet.status == 'pending' %>
-                <button class="furever-button furever-button-ongoing mt-3" disabled>Adoption Ongoing</button>
+                <button class="furever-button furever-button-adopted mt-3" disabled>Adoption Ongoing</button>
               <% elsif pet.status == 'adopted' %>
-                <button class="furever-button furever-button-adopted mt-3" disabled><%= pet.title %> is Adopted</button>
+                <button class="furever-button furever-button-ongoing mt-3" disabled><%= pet.title %> is Adopted</button>
               <% end %>
             </div>
           </div>
