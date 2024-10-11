@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :requests, through: :adoptions, source: :pet
   has_many :messages
 
+  validates :name, presence: true
+
   def owner?
     role == 'owner'
   end
